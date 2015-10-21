@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFD1BD808930037A87F /* AppDelegate.swift */; };
+		BADD40001BD808930037A87F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFF1BD808930037A87F /* Document.swift */; };
+		BADD40031BD808930037A87F /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40011BD808930037A87F /* Document.xib */; };
+		BADD40051BD808930037A87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADD40041BD808930037A87F /* Assets.xcassets */; };
+		BADD40081BD808930037A87F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40061BD808930037A87F /* MainMenu.xib */; };
+		BADD40131BD808930037A87F /* FenestroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD40121BD808930037A87F /* FenestroTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BADD400F1BD808930037A87F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BADD3FF21BD808930037A87F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BADD3FF91BD808930037A87F;
+			remoteInfo = Fenestro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BADD3FFA1BD808930037A87F /* Fenestro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BADD3FFD1BD808930037A87F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BADD3FFF1BD808930037A87F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		BADD40021BD808930037A87F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		BADD40041BD808930037A87F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BADD40071BD808930037A87F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BADD40091BD808930037A87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADD400E1BD808930037A87F /* FenestroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FenestroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BADD40121BD808930037A87F /* FenestroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestroTests.swift; sourceTree = "<group>"; };
+		BADD40141BD808930037A87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BADD3FF71BD808930037A87F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BADD400B1BD808930037A87F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BADD3FF11BD808930037A87F = {
+			isa = PBXGroup;
+			children = (
+				BADD3FFC1BD808930037A87F /* Fenestro */,
+				BADD40111BD808930037A87F /* FenestroTests */,
+				BADD3FFB1BD808930037A87F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BADD3FFB1BD808930037A87F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BADD3FFA1BD808930037A87F /* Fenestro.app */,
+				BADD400E1BD808930037A87F /* FenestroTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BADD3FFC1BD808930037A87F /* Fenestro */ = {
+			isa = PBXGroup;
+			children = (
+				BADD3FFD1BD808930037A87F /* AppDelegate.swift */,
+				BADD3FFF1BD808930037A87F /* Document.swift */,
+				BADD40011BD808930037A87F /* Document.xib */,
+				BADD40041BD808930037A87F /* Assets.xcassets */,
+				BADD40061BD808930037A87F /* MainMenu.xib */,
+				BADD40091BD808930037A87F /* Info.plist */,
+			);
+			path = Fenestro;
+			sourceTree = "<group>";
+		};
+		BADD40111BD808930037A87F /* FenestroTests */ = {
+			isa = PBXGroup;
+			children = (
+				BADD40121BD808930037A87F /* FenestroTests.swift */,
+				BADD40141BD808930037A87F /* Info.plist */,
+			);
+			path = FenestroTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BADD3FF91BD808930037A87F /* Fenestro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BADD40171BD808930037A87F /* Build configuration list for PBXNativeTarget "Fenestro" */;
+			buildPhases = (
+				BADD3FF61BD808930037A87F /* Sources */,
+				BADD3FF71BD808930037A87F /* Frameworks */,
+				BADD3FF81BD808930037A87F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fenestro;
+			productName = Fenestro;
+			productReference = BADD3FFA1BD808930037A87F /* Fenestro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BADD400D1BD808930037A87F /* FenestroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BADD401A1BD808930037A87F /* Build configuration list for PBXNativeTarget "FenestroTests" */;
+			buildPhases = (
+				BADD400A1BD808930037A87F /* Sources */,
+				BADD400B1BD808930037A87F /* Frameworks */,
+				BADD400C1BD808930037A87F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BADD40101BD808930037A87F /* PBXTargetDependency */,
+			);
+			name = FenestroTests;
+			productName = FenestroTests;
+			productReference = BADD400E1BD808930037A87F /* FenestroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BADD3FF21BD808930037A87F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Corporate Runaways, LLC";
+				TargetAttributes = {
+					BADD3FF91BD808930037A87F = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					BADD400D1BD808930037A87F = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = BADD3FF91BD808930037A87F;
+					};
+				};
+			};
+			buildConfigurationList = BADD3FF51BD808930037A87F /* Build configuration list for PBXProject "Fenestro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BADD3FF11BD808930037A87F;
+			productRefGroup = BADD3FFB1BD808930037A87F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BADD3FF91BD808930037A87F /* Fenestro */,
+				BADD400D1BD808930037A87F /* FenestroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BADD3FF81BD808930037A87F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADD40051BD808930037A87F /* Assets.xcassets in Resources */,
+				BADD40031BD808930037A87F /* Document.xib in Resources */,
+				BADD40081BD808930037A87F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BADD400C1BD808930037A87F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BADD3FF61BD808930037A87F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADD40001BD808930037A87F /* Document.swift in Sources */,
+				BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BADD400A1BD808930037A87F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADD40131BD808930037A87F /* FenestroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BADD40101BD808930037A87F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BADD3FF91BD808930037A87F /* Fenestro */;
+			targetProxy = BADD400F1BD808930037A87F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BADD40011BD808930037A87F /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BADD40021BD808930037A87F /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		BADD40061BD808930037A87F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BADD40071BD808930037A87F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BADD40151BD808930037A87F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BADD40161BD808930037A87F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BADD40181BD808930037A87F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fenestro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.Fenestro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BADD40191BD808930037A87F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fenestro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.Fenestro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BADD401B1BD808930037A87F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FenestroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.FenestroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fenestro.app/Contents/MacOS/Fenestro";
+			};
+			name = Debug;
+		};
+		BADD401C1BD808930037A87F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FenestroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.FenestroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fenestro.app/Contents/MacOS/Fenestro";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BADD3FF51BD808930037A87F /* Build configuration list for PBXProject "Fenestro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BADD40151BD808930037A87F /* Debug */,
+				BADD40161BD808930037A87F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BADD40171BD808930037A87F /* Build configuration list for PBXNativeTarget "Fenestro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BADD40181BD808930037A87F /* Debug */,
+				BADD40191BD808930037A87F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BADD401A1BD808930037A87F /* Build configuration list for PBXNativeTarget "FenestroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BADD401B1BD808930037A87F /* Debug */,
+				BADD401C1BD808930037A87F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BADD3FF21BD808930037A87F /* Project object */;
+}
