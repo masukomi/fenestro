@@ -22,7 +22,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationWillTerminate(aNotification: NSNotification) {
 
 	}
-
+/**
+	func application(sender: NSApplication, openFile filename: String) -> Bool {
+		let wincontroller = NSDocumentController.sharedDocumentController()
+		let document = Document (name: filename, path: NSURL (fileURLWithPath: filename))
+		wincontroller.addDocument( document)
+		//		wincontroller
+		document.showWindows()
+		document.title
+		return true
+	}
+*/
 	/*
 	func applicationShouldOpenUntitledFile(sender: NSApplication) -> Bool {
 	return true

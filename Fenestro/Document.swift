@@ -15,28 +15,28 @@ class Document: NSDocument {
 
 	@IBOutlet weak var webview: WebView!
 
-	let name: String
-	let path: NSURL
+	var name: String!
+	var path: NSURL!
 
 	override init() {
-		self.name = "README"
-		self.path = Document.defaultpath
-
 		super.init()
 	}
 
 	/** Called when creating an empty document. */
 	convenience init(type typeName: String) throws {
 		self.init()
+
+		self.name = "README"
+		self.path = Document.defaultpath
 	}
 
-	/*
 	convenience init(name: String, path: NSURL) {
 		self.init()
 
-		// Add your subclass-specific initialization here.
+		self.name = name
+		self.path = path
 	}
-	*/
+
 
 	override func windowControllerDidLoadNib(aController: NSWindowController) {
 		super.windowControllerDidLoadNib(aController)
@@ -48,5 +48,9 @@ class Document: NSDocument {
 		// Returns the nib file name of the document
 		return "Document"
 	}
-}
 
+	override func readFromURL(url: NSURL, ofType typeName: String) throws {
+		path = url
+		name = url.lastPathComponent ?? ""
+	}
+}
