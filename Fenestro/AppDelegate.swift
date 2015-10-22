@@ -12,31 +12,17 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
-		let wincontroller = NSDocumentController.sharedDocumentController()
-		if wincontroller.documents.isEmpty {
-			// guaranteed to never throw – see Document.init(type typeName: String)
-			try! wincontroller.openUntitledDocumentAndDisplay(true)
-		}
+
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification) {
 
 	}
-/**
+
 	func application(sender: NSApplication, openFile filename: String) -> Bool {
 		let wincontroller = NSDocumentController.sharedDocumentController()
-		let document = Document (name: filename, path: NSURL (fileURLWithPath: filename))
-		wincontroller.addDocument( document)
-		//		wincontroller
-		document.showWindows()
-		document.title
+		wincontroller.openDocumentWithContentsOfURL(NSURL(fileURLWithPath: filename), display: true) { _ in }
+
 		return true
 	}
-*/
-	/*
-	func applicationShouldOpenUntitledFile(sender: NSApplication) -> Bool {
-	return true
-	}
-	*/
 }
-

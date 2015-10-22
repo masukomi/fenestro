@@ -30,14 +30,6 @@ class Document: NSDocument {
 		self.path = Document.defaultpath
 	}
 
-	convenience init(name: String, path: NSURL) {
-		self.init()
-
-		self.name = name
-		self.path = path
-	}
-
-
 	override func windowControllerDidLoadNib(aController: NSWindowController) {
 		super.windowControllerDidLoadNib(aController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
