@@ -38,6 +38,7 @@
 		BADD40121BD808930037A87F /* FenestroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestroTests.swift; sourceTree = "<group>"; };
 		BADD40141BD808930037A87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADD401E1BD836D10037A87F /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
+		BADD40211BD855EF0037A87F /* openfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = openfiles.sh; path = test/openfiles.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		BADD3FF11BD808930037A87F = {
 			isa = PBXGroup;
 			children = (
+				BADD40211BD855EF0037A87F /* openfiles.sh */,
 				BADD3FFC1BD808930037A87F /* Fenestro */,
 				BADD40111BD808930037A87F /* FenestroTests */,
 				BADD3FFB1BD808930037A87F /* Products */,
@@ -358,7 +360,6 @@
 		BADD401B1BD808930037A87F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FenestroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -371,7 +372,6 @@
 		BADD401C1BD808930037A87F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FenestroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
