@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422C91BD97C6600EB67A0 /* ListController.swift */; };
+		BA7422CD1BD97DD200EB67A0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422CC1BD97DD200EB67A0 /* View.swift */; };
 		BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFD1BD808930037A87F /* AppDelegate.swift */; };
 		BADD40001BD808930037A87F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFF1BD808930037A87F /* Document.swift */; };
 		BADD40031BD808930037A87F /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40011BD808930037A87F /* Document.xib */; };
 		BADD40051BD808930037A87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADD40041BD808930037A87F /* Assets.xcassets */; };
 		BADD40081BD808930037A87F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40061BD808930037A87F /* MainMenu.xib */; };
 		BADD40131BD808930037A87F /* FenestroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD40121BD808930037A87F /* FenestroTests.swift */; };
-		BADD401F1BD836D10037A87F /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = BADD401E1BD836D10037A87F /* README.html */; settings = {ASSET_TAGS = (); }; };
+		BADD401F1BD836D10037A87F /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = BADD401E1BD836D10037A87F /* README.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA7422C91BD97C6600EB67A0 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		BA7422CC1BD97DD200EB67A0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BADD3FFA1BD808930037A87F /* Fenestro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADD3FFD1BD808930037A87F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADD3FFF1BD808930037A87F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -59,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA7422CB1BD97D9500EB67A0 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				BA7422CC1BD97DD200EB67A0 /* View.swift */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 		BADD3FF11BD808930037A87F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +97,8 @@
 				BADD3FFF1BD808930037A87F /* Document.swift */,
 				BADD40011BD808930037A87F /* Document.xib */,
 				BADD40061BD808930037A87F /* MainMenu.xib */,
+				BA7422C91BD97C6600EB67A0 /* ListController.swift */,
+				BA7422CB1BD97D9500EB67A0 /* General */,
 				BADD401D1BD836AC0037A87F /* Resources */,
 			);
 			path = Fenestro;
@@ -210,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7422CD1BD97DD200EB67A0 /* View.swift in Sources */,
 				BADD40001BD808930037A87F /* Document.swift in Sources */,
 				BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */,
+				BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +376,7 @@
 		BADD401B1BD808930037A87F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FenestroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -372,6 +389,7 @@
 		BADD401C1BD808930037A87F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FenestroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -400,6 +418,7 @@
 				BADD40191BD808930037A87F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BADD401A1BD808930037A87F /* Build configuration list for PBXNativeTarget "FenestroTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +427,7 @@
 				BADD401C1BD808930037A87F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
