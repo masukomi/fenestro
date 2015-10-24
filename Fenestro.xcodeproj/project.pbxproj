@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA6314EB1BDAE77600EAA17E /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314E91BDAE77600EAA17E /* 1.html */; };
+		BA6314EC1BDAE77600EAA17E /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314EA1BDAE77600EAA17E /* 2.html */; };
 		BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422C91BD97C6600EB67A0 /* ListController.swift */; };
 		BA7422CD1BD97DD200EB67A0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422CC1BD97DD200EB67A0 /* View.swift */; };
 		BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFD1BD808930037A87F /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA6314E91BDAE77600EAA17E /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 1.html; path = test/1.html; sourceTree = SOURCE_ROOT; };
+		BA6314EA1BDAE77600EAA17E /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = test/2.html; sourceTree = SOURCE_ROOT; };
 		BA7422C91BD97C6600EB67A0 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		BA7422CC1BD97DD200EB67A0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BADD3FFA1BD808930037A87F /* Fenestro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA6314E81BDAE75B00EAA17E /* Testfiles */ = {
+			isa = PBXGroup;
+			children = (
+				BA6314E91BDAE77600EAA17E /* 1.html */,
+				BA6314EA1BDAE77600EAA17E /* 2.html */,
+			);
+			name = Testfiles;
+			sourceTree = "<group>";
+		};
 		BA7422CB1BD97D9500EB67A0 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,7 @@
 		BADD40111BD808930037A87F /* FenestroTests */ = {
 			isa = PBXGroup;
 			children = (
+				BA6314E81BDAE75B00EAA17E /* Testfiles */,
 				BADD40121BD808930037A87F /* FenestroTests.swift */,
 				BADD40141BD808930037A87F /* Info.plist */,
 			);
@@ -214,6 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6314EB1BDAE77600EAA17E /* 1.html in Resources */,
+				BA6314EC1BDAE77600EAA17E /* 2.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,8 @@ class Document: NSDocument {
 	static let defaultpath = NSBundle.mainBundle().URLForResource("README", withExtension: "html")!
 
 	@IBOutlet weak var webview: WebView!
+	@IBOutlet weak var splitview: NSSplitView!
+	var filelist: ListController?
 
 	var name: String!
 	var path: NSURL!
@@ -44,5 +46,14 @@ class Document: NSDocument {
 	override func readFromURL(url: NSURL, ofType typeName: String) throws {
 		path = url
 		name = url.lastPathComponent ?? ""
+	}
+
+
+	func addFile(name name: String, path: NSURL) {
+		if filelist == nil {
+			filelist = ListController(name: self.name, path: self.path)
+			splitview.addSubview(filelist!.view)
+		}
+		filelist?.addFile(name: name, path: path)
 	}
 }

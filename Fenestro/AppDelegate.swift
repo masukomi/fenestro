@@ -11,6 +11,11 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+	func applicationWillFinishLaunching(notification: NSNotification) {
+		// make our subclass the sharedDocumentController
+		let _ = DocumentController()
+	}
+
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 
 	}
@@ -18,11 +23,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationWillTerminate(aNotification: NSNotification) {
 
 	}
+}
 
-	func application(sender: NSApplication, openFile filename: String) -> Bool {
-		let wincontroller = NSDocumentController.sharedDocumentController()
-		wincontroller.openDocumentWithContentsOfURL(NSURL(fileURLWithPath: filename), display: true) { _ in }
+class DocumentController: NSDocumentController  {
 
-		return true
+	var timeoflastopening = NSDate.distantPast()
+
+	override func openDocumentWithContentsOfURL (url: NSURL, display displayDocument: Bool,
+		completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
+
+			if NSDate().timeIntervalSinceDate(timeoflastopening) < 0.5,	let document = self.documents.last as? Document {
+				document.addFile(name: url.lastPathComponent ?? "", path: url)
+			} else {
+				super.openDocumentWithContentsOfURL(url, display: displayDocument, completionHandler: completionHandler)
+			}
+			timeoflastopening = NSDate()
 	}
 }
