@@ -52,7 +52,8 @@ class Document: NSDocument {
 	func addFile(name name: String, path: NSURL) {
 		if filelist == nil {
 			filelist = ListController(name: self.name, path: self.path)
-			splitview.addSubview(filelist!.view)
+			splitview.addSubview(filelist!.view, positioned: .Below, relativeTo: nil)
+			filelist?.view.setFrameSize(NSSize(width: 200, height: Int.max))
 		}
 		filelist?.addFile(name: name, path: path)
 	}
