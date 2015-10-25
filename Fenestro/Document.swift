@@ -35,7 +35,7 @@ class Document: NSDocument {
 	override func windowControllerDidLoadNib(aController: NSWindowController) {
 		super.windowControllerDidLoadNib(aController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
-		webview.mainFrame.loadRequest(NSURLRequest(URL: path))
+		self.showFile(path)
 	}
 
 	override var windowNibName: String? {
@@ -48,10 +48,14 @@ class Document: NSDocument {
 		name = url.lastPathComponent ?? ""
 	}
 
+	func showFile (path: NSURL) {
+		webview.mainFrame.loadRequest(NSURLRequest(URL: path))
+	}
 
 	func addFile(name name: String, path: NSURL) {
 		if filelist == nil {
 			filelist = ListController(name: self.name, path: self.path)
+			filelist!.selectionHandler = showFile
 			splitview.addSubview(filelist!.view, positioned: .Below, relativeTo: nil)
 			filelist?.view.setFrameSize(NSSize(width: 200, height: Int.max))
 		}

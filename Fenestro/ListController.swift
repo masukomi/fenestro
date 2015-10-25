@@ -12,6 +12,7 @@ class ListController: NSViewController {
 
 	private var list: [(name: String, path: NSURL)]
 	let tableview = NSTableView()
+	var selectionHandler: ((NSURL) -> Void)?
 
 	init (name: String, path: NSURL) {
 		list = [(name, path)]
@@ -36,8 +37,8 @@ class ListController: NSViewController {
 	}
 
 	func addFile(name name: String, path: NSURL) {
-		list.append((name, path))
 		tableview.beginUpdates()
+		list.append((name, path))
 		tableview.insertRowsAtIndexes( NSIndexSet(index: list.count), withAnimation: .SlideUp)
 		tableview.endUpdates()
 	}
@@ -50,5 +51,10 @@ extension ListController: NSTableViewDataSource, NSTableViewDelegate {
 
 	func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
 		return list[row].name
+	}
+
+	func tableViewSelectionDidChange(notification: NSNotification) {
+		let path = list[tableview.selectedRow].path
+		selectionHandler?(path)
 	}
 }
