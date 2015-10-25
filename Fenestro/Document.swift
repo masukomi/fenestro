@@ -54,10 +54,11 @@ class Document: NSDocument {
 
 	func addFile(name name: String, path: NSURL) {
 		if filelist == nil {
-			filelist = ListController(name: self.name, path: self.path)
-			filelist!.selectionHandler = showFile
-			splitview.addSubview(filelist!.view, positioned: .Below, relativeTo: nil)
-			filelist?.view.setFrameSize(NSSize(width: 200, height: Int.max))
+			let newfilelist = ListController(name: self.name, path: self.path)
+			newfilelist.selectionHandler = showFile
+			splitview.addSubview(newfilelist.view, positioned: .Below, relativeTo: nil)
+			newfilelist.view.setFrameSize(NSSize(width: 200, height: Int.max))
+			filelist = newfilelist
 		}
 		filelist?.addFile(name: name, path: path)
 	}
