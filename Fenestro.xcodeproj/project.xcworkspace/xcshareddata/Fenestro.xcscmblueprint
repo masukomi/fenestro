@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "329E66929AB285BC7B7AB14742972A5565A733FC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "329E66929AB285BC7B7AB14742972A5565A733FC" : 0,
+    "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6A78CD8F-7F02-4983-B09C-54C245C06689",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "329E66929AB285BC7B7AB14742972A5565A733FC" : "Fenestro\/",
+    "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F" : "Fenestro\/Carthage\/Checkouts\/SwiftShell\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Fenestro",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Fenestro.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/masukomi\/fenestro",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "329E66929AB285BC7B7AB14742972A5565A733FC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kareman\/SwiftShell.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F"
+    }
+  ]
+}

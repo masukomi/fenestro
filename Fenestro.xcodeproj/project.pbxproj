@@ -18,7 +18,16 @@
 		BADD40081BD808930037A87F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40061BD808930037A87F /* MainMenu.xib */; };
 		BADD40131BD808930037A87F /* FenestroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD40121BD808930037A87F /* FenestroTests.swift */; };
 		BADD401F1BD836D10037A87F /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = BADD401E1BD836D10037A87F /* README.html */; };
-		BAFC9C2F1BDDAB3000EE4654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C2E1BDDAB3000EE4654 /* main.swift */; };
+		BAFC9C561BDDB72C00EE4654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C551BDDB72C00EE4654 /* main.swift */; };
+		BAFC9C5A1BDDB7AA00EE4654 /* Bash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C381BDDB32000EE4654 /* Bash.swift */; };
+		BAFC9C5B1BDDB7AA00EE4654 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C391BDDB32000EE4654 /* Command.swift */; };
+		BAFC9C5C1BDDB7AA00EE4654 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C3A1BDDB32000EE4654 /* Context.swift */; };
+		BAFC9C5D1BDDB7AA00EE4654 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C3B1BDDB32000EE4654 /* FileHandle.swift */; };
+		BAFC9C5E1BDDB7AA00EE4654 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C3C1BDDB32000EE4654 /* Files.swift */; };
+		BAFC9C5F1BDDB7AA00EE4654 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C3E1BDDB32000EE4654 /* Array.swift */; };
+		BAFC9C601BDDB7AA00EE4654 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C3F1BDDB32000EE4654 /* String.swift */; };
+		BAFC9C631BDDB7AA00EE4654 /* NSTask+NSTask_Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C421BDDB32000EE4654 /* NSTask+NSTask_Errors.m */; };
+		BAFC9C641BDDB7AA00EE4654 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C431BDDB32000EE4654 /* Stream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BAFC9C2A1BDDAB3000EE4654 /* CopyFiles */ = {
+		BAFC9C511BDDB72C00EE4654 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -60,8 +69,21 @@
 		BADD40141BD808930037A87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADD401E1BD836D10037A87F /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
 		BADD40211BD855EF0037A87F /* openfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = openfiles.sh; path = test/openfiles.sh; sourceTree = "<group>"; };
-		BAFC9C2C1BDDAB3000EE4654 /* fenestro */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fenestro; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAFC9C2E1BDDAB3000EE4654 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BAFC9C381BDDB32000EE4654 /* Bash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
+		BAFC9C391BDDB32000EE4654 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		BAFC9C3A1BDDB32000EE4654 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		BAFC9C3B1BDDB32000EE4654 /* FileHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandle.swift; sourceTree = "<group>"; };
+		BAFC9C3C1BDDB32000EE4654 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		BAFC9C3E1BDDB32000EE4654 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		BAFC9C3F1BDDB32000EE4654 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BAFC9C401BDDB32000EE4654 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFC9C411BDDB32000EE4654 /* NSTask+NSTask_Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+NSTask_Errors.h"; sourceTree = "<group>"; };
+		BAFC9C421BDDB32000EE4654 /* NSTask+NSTask_Errors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+NSTask_Errors.m"; sourceTree = "<group>"; };
+		BAFC9C431BDDB32000EE4654 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		BAFC9C441BDDB32000EE4654 /* SwiftShell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftShell-Bridging-Header.h"; sourceTree = "<group>"; };
+		BAFC9C4E1BDDB40800EE4654 /* fenestro-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "fenestro-Bridging-Header.h"; sourceTree = "<group>"; };
+		BAFC9C531BDDB72C00EE4654 /* fenestro-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "fenestro-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFC9C551BDDB72C00EE4654 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +101,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BAFC9C291BDDAB3000EE4654 /* Frameworks */ = {
+		BAFC9C501BDDB72C00EE4654 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -112,7 +134,7 @@
 				BADD40211BD855EF0037A87F /* openfiles.sh */,
 				BADD3FFC1BD808930037A87F /* Fenestro */,
 				BADD40111BD808930037A87F /* FenestroTests */,
-				BAFC9C2D1BDDAB3000EE4654 /* fenestro */,
+				BAFC9C541BDDB72C00EE4654 /* fenestro-cli */,
 				BADD3FFB1BD808930037A87F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,7 +144,7 @@
 			children = (
 				BADD3FFA1BD808930037A87F /* Fenestro.app */,
 				BADD400E1BD808930037A87F /* FenestroTests.xctest */,
-				BAFC9C2C1BDDAB3000EE4654 /* fenestro */,
+				BAFC9C531BDDB72C00EE4654 /* fenestro-cli */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,12 +183,41 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		BAFC9C2D1BDDAB3000EE4654 /* fenestro */ = {
+		BAFC9C371BDDB32000EE4654 /* SwiftShell */ = {
 			isa = PBXGroup;
 			children = (
-				BAFC9C2E1BDDAB3000EE4654 /* main.swift */,
+				BAFC9C381BDDB32000EE4654 /* Bash.swift */,
+				BAFC9C391BDDB32000EE4654 /* Command.swift */,
+				BAFC9C3A1BDDB32000EE4654 /* Context.swift */,
+				BAFC9C3B1BDDB32000EE4654 /* FileHandle.swift */,
+				BAFC9C3C1BDDB32000EE4654 /* Files.swift */,
+				BAFC9C3D1BDDB32000EE4654 /* General */,
+				BAFC9C401BDDB32000EE4654 /* Info.plist */,
+				BAFC9C411BDDB32000EE4654 /* NSTask+NSTask_Errors.h */,
+				BAFC9C421BDDB32000EE4654 /* NSTask+NSTask_Errors.m */,
+				BAFC9C431BDDB32000EE4654 /* Stream.swift */,
+				BAFC9C441BDDB32000EE4654 /* SwiftShell-Bridging-Header.h */,
 			);
-			name = fenestro;
+			name = SwiftShell;
+			path = Carthage/Checkouts/SwiftShell/SwiftShell;
+			sourceTree = SOURCE_ROOT;
+		};
+		BAFC9C3D1BDDB32000EE4654 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				BAFC9C3E1BDDB32000EE4654 /* Array.swift */,
+				BAFC9C3F1BDDB32000EE4654 /* String.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		BAFC9C541BDDB72C00EE4654 /* fenestro-cli */ = {
+			isa = PBXGroup;
+			children = (
+				BAFC9C371BDDB32000EE4654 /* SwiftShell */,
+				BAFC9C551BDDB72C00EE4654 /* main.swift */,
+				BAFC9C4E1BDDB40800EE4654 /* fenestro-Bridging-Header.h */,
+			);
 			path = "fenestro-cli";
 			sourceTree = "<group>";
 		};
@@ -208,21 +259,21 @@
 			productReference = BADD400E1BD808930037A87F /* FenestroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BAFC9C2B1BDDAB3000EE4654 /* fenestro */ = {
+		BAFC9C521BDDB72C00EE4654 /* fenestro-cli */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BAFC9C321BDDAB3000EE4654 /* Build configuration list for PBXNativeTarget "fenestro" */;
+			buildConfigurationList = BAFC9C571BDDB72C00EE4654 /* Build configuration list for PBXNativeTarget "fenestro-cli" */;
 			buildPhases = (
-				BAFC9C281BDDAB3000EE4654 /* Sources */,
-				BAFC9C291BDDAB3000EE4654 /* Frameworks */,
-				BAFC9C2A1BDDAB3000EE4654 /* CopyFiles */,
+				BAFC9C4F1BDDB72C00EE4654 /* Sources */,
+				BAFC9C501BDDB72C00EE4654 /* Frameworks */,
+				BAFC9C511BDDB72C00EE4654 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = fenestro;
-			productName = fenestro;
-			productReference = BAFC9C2C1BDDAB3000EE4654 /* fenestro */;
+			name = "fenestro-cli";
+			productName = "fenestro-cli";
+			productReference = BAFC9C531BDDB72C00EE4654 /* fenestro-cli */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +293,7 @@
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = BADD3FF91BD808930037A87F;
 					};
-					BAFC9C2B1BDDAB3000EE4654 = {
+					BAFC9C521BDDB72C00EE4654 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -262,7 +313,7 @@
 			targets = (
 				BADD3FF91BD808930037A87F /* Fenestro */,
 				BADD400D1BD808930037A87F /* FenestroTests */,
-				BAFC9C2B1BDDAB3000EE4654 /* fenestro */,
+				BAFC9C521BDDB72C00EE4654 /* fenestro-cli */,
 			);
 		};
 /* End PBXProject section */
@@ -310,11 +361,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BAFC9C281BDDAB3000EE4654 /* Sources */ = {
+		BAFC9C4F1BDDB72C00EE4654 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAFC9C2F1BDDAB3000EE4654 /* main.swift in Sources */,
+				BAFC9C5A1BDDB7AA00EE4654 /* Bash.swift in Sources */,
+				BAFC9C5B1BDDB7AA00EE4654 /* Command.swift in Sources */,
+				BAFC9C5C1BDDB7AA00EE4654 /* Context.swift in Sources */,
+				BAFC9C5D1BDDB7AA00EE4654 /* FileHandle.swift in Sources */,
+				BAFC9C5E1BDDB7AA00EE4654 /* Files.swift in Sources */,
+				BAFC9C5F1BDDB7AA00EE4654 /* Array.swift in Sources */,
+				BAFC9C601BDDB7AA00EE4654 /* String.swift in Sources */,
+				BAFC9C631BDDB7AA00EE4654 /* NSTask+NSTask_Errors.m in Sources */,
+				BAFC9C641BDDB7AA00EE4654 /* Stream.swift in Sources */,
+				BAFC9C561BDDB72C00EE4654 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,19 +538,21 @@
 			};
 			name = Release;
 		};
-		BAFC9C301BDDAB3000EE4654 /* Debug */ = {
+		BAFC9C581BDDB72C00EE4654 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "fenestro-cli/fenestro-Bridging-Header.h";
 			};
 			name = Debug;
 		};
-		BAFC9C311BDDAB3000EE4654 /* Release */ = {
+		BAFC9C591BDDB72C00EE4654 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "fenestro-cli/fenestro-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -524,11 +586,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BAFC9C321BDDAB3000EE4654 /* Build configuration list for PBXNativeTarget "fenestro" */ = {
+		BAFC9C571BDDB72C00EE4654 /* Build configuration list for PBXNativeTarget "fenestro-cli" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BAFC9C301BDDAB3000EE4654 /* Debug */,
-				BAFC9C311BDDAB3000EE4654 /* Release */,
+				BAFC9C581BDDB72C00EE4654 /* Debug */,
+				BAFC9C591BDDB72C00EE4654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
