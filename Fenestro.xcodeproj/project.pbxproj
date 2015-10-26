@@ -18,6 +18,7 @@
 		BADD40081BD808930037A87F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40061BD808930037A87F /* MainMenu.xib */; };
 		BADD40131BD808930037A87F /* FenestroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD40121BD808930037A87F /* FenestroTests.swift */; };
 		BADD401F1BD836D10037A87F /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = BADD401E1BD836D10037A87F /* README.html */; };
+		BAFC9C2F1BDDAB3000EE4654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C2E1BDDAB3000EE4654 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,18 @@
 			remoteInfo = Fenestro;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BAFC9C2A1BDDAB3000EE4654 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BA6314E91BDAE77600EAA17E /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 1.html; path = test/1.html; sourceTree = SOURCE_ROOT; };
@@ -47,6 +60,8 @@
 		BADD40141BD808930037A87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADD401E1BD836D10037A87F /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
 		BADD40211BD855EF0037A87F /* openfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = openfiles.sh; path = test/openfiles.sh; sourceTree = "<group>"; };
+		BAFC9C2C1BDDAB3000EE4654 /* fenestro */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fenestro; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFC9C2E1BDDAB3000EE4654 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BADD400B1BD808930037A87F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFC9C291BDDAB3000EE4654 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,6 +112,7 @@
 				BADD40211BD855EF0037A87F /* openfiles.sh */,
 				BADD3FFC1BD808930037A87F /* Fenestro */,
 				BADD40111BD808930037A87F /* FenestroTests */,
+				BAFC9C2D1BDDAB3000EE4654 /* fenestro */,
 				BADD3FFB1BD808930037A87F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +122,7 @@
 			children = (
 				BADD3FFA1BD808930037A87F /* Fenestro.app */,
 				BADD400E1BD808930037A87F /* FenestroTests.xctest */,
+				BAFC9C2C1BDDAB3000EE4654 /* fenestro */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +159,15 @@
 				BADD40091BD808930037A87F /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		BAFC9C2D1BDDAB3000EE4654 /* fenestro */ = {
+			isa = PBXGroup;
+			children = (
+				BAFC9C2E1BDDAB3000EE4654 /* main.swift */,
+			);
+			name = fenestro;
+			path = "fenestro-cli";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,12 +208,30 @@
 			productReference = BADD400E1BD808930037A87F /* FenestroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BAFC9C2B1BDDAB3000EE4654 /* fenestro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFC9C321BDDAB3000EE4654 /* Build configuration list for PBXNativeTarget "fenestro" */;
+			buildPhases = (
+				BAFC9C281BDDAB3000EE4654 /* Sources */,
+				BAFC9C291BDDAB3000EE4654 /* Frameworks */,
+				BAFC9C2A1BDDAB3000EE4654 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fenestro;
+			productName = fenestro;
+			productReference = BAFC9C2C1BDDAB3000EE4654 /* fenestro */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BADD3FF21BD808930037A87F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Corporate Runaways, LLC";
 				TargetAttributes = {
@@ -190,6 +241,9 @@
 					BADD400D1BD808930037A87F = {
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = BADD3FF91BD808930037A87F;
+					};
+					BAFC9C2B1BDDAB3000EE4654 = {
+						CreatedOnToolsVersion = 7.1;
 					};
 				};
 			};
@@ -208,6 +262,7 @@
 			targets = (
 				BADD3FF91BD808930037A87F /* Fenestro */,
 				BADD400D1BD808930037A87F /* FenestroTests */,
+				BAFC9C2B1BDDAB3000EE4654 /* fenestro */,
 			);
 		};
 /* End PBXProject section */
@@ -252,6 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADD40131BD808930037A87F /* FenestroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFC9C281BDDAB3000EE4654 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFC9C2F1BDDAB3000EE4654 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +478,22 @@
 			};
 			name = Release;
 		};
+		BAFC9C301BDDAB3000EE4654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAFC9C311BDDAB3000EE4654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -444,6 +523,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BAFC9C321BDDAB3000EE4654 /* Build configuration list for PBXNativeTarget "fenestro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFC9C301BDDAB3000EE4654 /* Debug */,
+				BAFC9C311BDDAB3000EE4654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
