@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/CommandLine"]
+	path = Carthage/Checkouts/CommandLine
+	url = https://github.com/jatoben/CommandLine.git
+[submodule "Carthage/Checkouts/SwiftShell"]
+	path = Carthage/Checkouts/SwiftShell
+	url = https://github.com/kareman/SwiftShell.git
