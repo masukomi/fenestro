@@ -28,6 +28,9 @@
 		BAFC9C601BDDB7AA00EE4654 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C3F1BDDB32000EE4654 /* String.swift */; };
 		BAFC9C631BDDB7AA00EE4654 /* NSTask+NSTask_Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C421BDDB32000EE4654 /* NSTask+NSTask_Errors.m */; };
 		BAFC9C641BDDB7AA00EE4654 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C431BDDB32000EE4654 /* Stream.swift */; };
+		BAFC9C6B1BDDBAC400EE4654 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C671BDDBAC400EE4654 /* CommandLine.swift */; };
+		BAFC9C6C1BDDBAC400EE4654 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C691BDDBAC400EE4654 /* Option.swift */; };
+		BAFC9C6D1BDDBAC400EE4654 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC9C6A1BDDBAC400EE4654 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,10 @@
 		BAFC9C4E1BDDB40800EE4654 /* fenestro-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "fenestro-Bridging-Header.h"; sourceTree = "<group>"; };
 		BAFC9C531BDDB72C00EE4654 /* fenestro-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "fenestro-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFC9C551BDDB72C00EE4654 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BAFC9C671BDDBAC400EE4654 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		BAFC9C681BDDBAC400EE4654 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFC9C691BDDBAC400EE4654 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		BAFC9C6A1BDDBAC400EE4654 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,12 +221,25 @@
 		BAFC9C541BDDB72C00EE4654 /* fenestro-cli */ = {
 			isa = PBXGroup;
 			children = (
+				BAFC9C661BDDBAC400EE4654 /* CommandLine */,
 				BAFC9C371BDDB32000EE4654 /* SwiftShell */,
 				BAFC9C551BDDB72C00EE4654 /* main.swift */,
 				BAFC9C4E1BDDB40800EE4654 /* fenestro-Bridging-Header.h */,
 			);
 			path = "fenestro-cli";
 			sourceTree = "<group>";
+		};
+		BAFC9C661BDDBAC400EE4654 /* CommandLine */ = {
+			isa = PBXGroup;
+			children = (
+				BAFC9C671BDDBAC400EE4654 /* CommandLine.swift */,
+				BAFC9C681BDDBAC400EE4654 /* Info.plist */,
+				BAFC9C691BDDBAC400EE4654 /* Option.swift */,
+				BAFC9C6A1BDDBAC400EE4654 /* StringExtensions.swift */,
+			);
+			name = CommandLine;
+			path = Carthage/Checkouts/CommandLine/CommandLine;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -368,12 +388,15 @@
 				BAFC9C5A1BDDB7AA00EE4654 /* Bash.swift in Sources */,
 				BAFC9C5B1BDDB7AA00EE4654 /* Command.swift in Sources */,
 				BAFC9C5C1BDDB7AA00EE4654 /* Context.swift in Sources */,
+				BAFC9C6B1BDDBAC400EE4654 /* CommandLine.swift in Sources */,
+				BAFC9C6C1BDDBAC400EE4654 /* Option.swift in Sources */,
 				BAFC9C5D1BDDB7AA00EE4654 /* FileHandle.swift in Sources */,
 				BAFC9C5E1BDDB7AA00EE4654 /* Files.swift in Sources */,
 				BAFC9C5F1BDDB7AA00EE4654 /* Array.swift in Sources */,
 				BAFC9C601BDDB7AA00EE4654 /* String.swift in Sources */,
 				BAFC9C631BDDB7AA00EE4654 /* NSTask+NSTask_Errors.m in Sources */,
 				BAFC9C641BDDB7AA00EE4654 /* Stream.swift in Sources */,
+				BAFC9C6D1BDDBAC400EE4654 /* StringExtensions.swift in Sources */,
 				BAFC9C561BDDB72C00EE4654 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
