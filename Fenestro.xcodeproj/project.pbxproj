@@ -85,7 +85,7 @@
 		BAFC9C431BDDB32000EE4654 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		BAFC9C441BDDB32000EE4654 /* SwiftShell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftShell-Bridging-Header.h"; sourceTree = "<group>"; };
 		BAFC9C4E1BDDB40800EE4654 /* fenestro-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "fenestro-Bridging-Header.h"; sourceTree = "<group>"; };
-		BAFC9C531BDDB72C00EE4654 /* fenestro-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "fenestro-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFC9C531BDDB72C00EE4654 /* fenestro */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fenestro; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFC9C551BDDB72C00EE4654 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BAFC9C671BDDBAC400EE4654 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		BAFC9C681BDDBAC400EE4654 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			children = (
 				BADD3FFA1BD808930037A87F /* Fenestro.app */,
 				BADD400E1BD808930037A87F /* FenestroTests.xctest */,
-				BAFC9C531BDDB72C00EE4654 /* fenestro-cli */,
+				BAFC9C531BDDB72C00EE4654 /* fenestro */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			);
 			name = "fenestro-cli";
 			productName = "fenestro-cli";
-			productReference = BAFC9C531BDDB72C00EE4654 /* fenestro-cli */;
+			productReference = BAFC9C531BDDB72C00EE4654 /* fenestro */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -565,7 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = fenestro;
 				SWIFT_OBJC_BRIDGING_HEADER = "fenestro-cli/fenestro-Bridging-Header.h";
 			};
 			name = Debug;
@@ -574,7 +574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = fenestro;
 				SWIFT_OBJC_BRIDGING_HEADER = "fenestro-cli/fenestro-Bridging-Header.h";
 			};
 			name = Release;
