@@ -16,7 +16,7 @@ class Fenestro_cli_Arguments: XCTestCase {
 		AssertNoThrow {
 			let (name, path) = try parseArguments(arguments)
 
-			XCTAssertEqual(name, "")
+			XCTAssertEqual(name, ".html")
 			XCTAssertNil(path)
 		}
 	}

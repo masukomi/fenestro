@@ -32,12 +32,21 @@ func parseArguments (args: [String] = Process.arguments) throws -> (name: String
 	}
 
 	let path = filePathOption.value.map(NSURL.init)
-	let name = nameOption.value ?? path?.lastPathComponent ?? ""
+	let name = nameOption.value ?? path?.lastPathComponent ?? ".html"
 	return (name, path)
 }
 
 do {
-	let (name, path) = try parseArguments()
+	let (name, maybepath) = try parseArguments()
+
+	let path: NSURL = try maybepath ?? {
+		let newpath = main.tempdirectory + name
+		var cache = try open(forWriting: newpath)
+		main.stdin.writeTo(&cache)
+		return NSURL(fileURLWithPath: newpath)
+	}()
+
+	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
 } catch {
 	exit(error)
 }
