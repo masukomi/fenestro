@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA5B63F71BDF27EA00124B20 /* fenestro in Resources */ = {isa = PBXBuildFile; fileRef = BAFC9C531BDDB72C00EE4654 /* fenestro */; };
 		BA6314EB1BDAE77600EAA17E /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314E91BDAE77600EAA17E /* 1.html */; };
 		BA6314EC1BDAE77600EAA17E /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314EA1BDAE77600EAA17E /* 2.html */; };
 		BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422C91BD97C6600EB67A0 /* ListController.swift */; };
@@ -49,6 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BA5B63F51BDF27CC00124B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BADD3FF21BD808930037A87F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAFC9C521BDDB72C00EE4654;
+			remoteInfo = "fenestro-cli";
+		};
 		BADD400F1BD808930037A87F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BADD3FF21BD808930037A87F /* Project object */;
@@ -293,6 +301,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BA5B63F61BDF27CC00124B20 /* PBXTargetDependency */,
 			);
 			name = Fenestro;
 			productName = Fenestro;
@@ -402,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA5B63F71BDF27EA00124B20 /* fenestro in Resources */,
 				BADD401F1BD836D10037A87F /* README.html in Resources */,
 				BADD40051BD808930037A87F /* Assets.xcassets in Resources */,
 				BADD40031BD808930037A87F /* Document.xib in Resources */,
@@ -492,6 +502,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BA5B63F61BDF27CC00124B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAFC9C521BDDB72C00EE4654 /* fenestro-cli */;
+			targetProxy = BA5B63F51BDF27CC00124B20 /* PBXContainerItemProxy */;
+		};
 		BADD40101BD808930037A87F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BADD3FF91BD808930037A87F /* Fenestro */;
@@ -730,6 +745,7 @@
 				BAFC9C591BDDB72C00EE4654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAFC9C771BDEE54F00EE4654 /* Build configuration list for PBXNativeTarget "Fenestro-cli_Tests" */ = {
 			isa = XCConfigurationList;
@@ -738,6 +754,7 @@
 				BAFC9C791BDEE54F00EE4654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
