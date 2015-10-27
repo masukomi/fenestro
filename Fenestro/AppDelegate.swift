@@ -34,6 +34,7 @@ class DocumentController: NSDocumentController  {
 
 			if NSDate().timeIntervalSinceDate(timeoflastopening) < 0.5,	let document = self.documents.last as? Document {
 				document.addFile(name: url.lastPathComponent ?? "", path: url)
+				completionHandler(document, true, nil)
 			} else {
 				super.openDocumentWithContentsOfURL(url, display: displayDocument, completionHandler: completionHandler)
 			}

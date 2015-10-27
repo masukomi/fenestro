@@ -11,6 +11,10 @@ import WebKit
 
 class Document: NSDocument {
 
+	override class func canConcurrentlyReadDocumentsOfType(typeName: String) -> Bool {
+		return false
+	}
+
 	static let defaultpath = NSBundle.mainBundle().URLForResource("README", withExtension: "html")!
 
 	@IBOutlet weak var webview: WebView!
