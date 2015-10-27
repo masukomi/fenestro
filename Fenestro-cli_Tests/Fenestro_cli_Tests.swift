@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Fenestro_cli_Arguments: XCTestCase {
+class ParseArguments_Tests: XCTestCase {
     
 	func testNoArgs () {
 		let arguments: [String] = ["fenestro"]
@@ -58,10 +58,24 @@ class Fenestro_cli_Arguments: XCTestCase {
 		let arguments: [String] = ["fenestro", "-u", "gibberish"]
 
 		AssertThrows(MyError(description: "")) {
-			let (name, path) = try parseArguments(arguments)
+			try parseArguments(arguments)
+		}
+	}
+}
 
-			XCTAssertEqual(name, "name")
-			XCTAssertEqual(path, NSURL(fileURLWithPath: "file.html", isDirectory: false))
+class GetVerifiedPath_Tests: XCTestCase {
+
+	func testNonExistingFileThrowsError () {
+		do {
+			try verifyOrCreateFile("", NSURL(fileURLWithPath: "idontexist.file"), contents: ReadableStream(NSFileHandle.fileHandleWithNullDevice()))
+			XCTFail("getVerifiedPath should have thrown an error")
+		} catch {}
+	}
+
+	func testNoPathCreatesAFile () {
+		AssertNoThrow {
+			let path = try verifyOrCreateFile("test.file", nil, contents: ReadableStream(NSFileHandle.fileHandleWithNullDevice()))
+			try makeThrowable(path.checkResourceIsReachableAndReturnError)
 		}
 	}
 }

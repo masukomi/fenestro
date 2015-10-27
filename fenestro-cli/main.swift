@@ -36,15 +36,21 @@ func parseArguments (args: [String] = Process.arguments) throws -> (name: String
 	return (name, path)
 }
 
-do {
-	let (name, maybepath) = try parseArguments()
-
-	let path: NSURL = try maybepath ?? {
+func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStream) throws -> NSURL {
+	if let path = maybepath {
+		try makeThrowable(path.checkResourceIsReachableAndReturnError)
+		return path
+	} else {
 		let newpath = main.tempdirectory + name
 		var cache = try open(forWriting: newpath)
-		main.stdin.writeTo(&cache)
+		contents.writeTo(&cache)
 		return NSURL(fileURLWithPath: newpath)
-	}()
+	}
+}
+
+do {
+	let (name, maybepath) = try parseArguments()
+	let path = try verifyOrCreateFile(name, maybepath, contents: main.stdin)
 
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
 } catch {
