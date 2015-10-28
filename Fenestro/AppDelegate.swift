@@ -11,17 +11,50 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+	/** The current location of the command line application, or nil if it was not found. */
+	var cliAppDirectory: NSURL? {
+		let path = NSUserDefaults.standardUserDefaults().URLForKey("CliAppPath")
+		return path.flatMap {
+			$0.URLByAppendingPathComponent("fenestro").checkResourceIsReachableAndReturnError(nil) ? $0 : nil
+		}
+	}
+
+	/** Install the bundled command line application to this directory. */
+	func installCliApp (directory: NSURL) throws {
+		let frompath = NSBundle.mainBundle().URLForResource("fenestro", withExtension: "")!
+		let topath = directory.URLByAppendingPathComponent("fenestro")
+		try NSFileManager.defaultManager().copyItemAtURL(frompath, toURL: topath)
+		NSUserDefaults.standardUserDefaults().setURL(directory, forKey: "CliAppPath")
+	}
+
+	func showError (error: ErrorType) {
+		NSAlert(error: error as NSError).runModal()
+	}
+
 	func applicationWillFinishLaunching(notification: NSNotification) {
-		// make our subclass the sharedDocumentController
+
+		// Make our subclass the sharedDocumentController.
 		let _ = DocumentController()
-	}
 
-	func applicationDidFinishLaunching(aNotification: NSNotification) {
-
-	}
-
-	func applicationWillTerminate(aNotification: NSNotification) {
-
+		// If commandline application cannot be found, install it.
+		if self.cliAppDirectory == nil {
+			let panel = NSOpenPanel()
+			panel.canChooseDirectories = true
+			panel.canChooseFiles = false
+			panel.allowsMultipleSelection = false
+			panel.prompt = "Select"
+			panel.showsHiddenFiles = true
+			panel.title = "Install commandline application"
+			panel.message = "Select the location for the commandline application. It should be a directory listed in the PATH environment variable for easy access."
+			panel.directoryURL = NSURL(fileURLWithPath: "/usr/local/bin")
+			if panel.runModal() == NSFileHandlingPanelOKButton {
+				do {
+					try installCliApp(panel.URLs.first!)
+				} catch {
+					showError(error)
+				}
+			}
+		}
 	}
 }
 
