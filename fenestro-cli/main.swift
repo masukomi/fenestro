@@ -32,7 +32,7 @@ func parseArguments (args: [String] = Process.arguments) throws -> (name: String
 	}
 
 	let path = filePathOption.value.map(NSURL.init)
-	let name = nameOption.value ?? path?.lastPathComponent ?? ".html"
+	let name = nameOption.value ?? path?.lastPathComponent ?? " .html"
 	return (name, path)
 }
 

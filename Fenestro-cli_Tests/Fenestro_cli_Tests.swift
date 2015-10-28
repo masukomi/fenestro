@@ -16,7 +16,7 @@ class ParseArguments_Tests: XCTestCase {
 		AssertNoThrow {
 			let (name, path) = try parseArguments(arguments)
 
-			XCTAssertEqual(name, ".html")
+			XCTAssertEqual(name, " .html")
 			XCTAssertNil(path)
 		}
 	}

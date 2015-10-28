@@ -32,12 +32,15 @@ class DocumentController: NSDocumentController  {
 	override func openDocumentWithContentsOfURL (url: NSURL, display displayDocument: Bool,
 		completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
 
-			if NSDate().timeIntervalSinceDate(timeoflastopening) < 0.5,	let document = self.documents.last as? Document {
+			if url.lastPathComponent != " .html" &&
+				NSDate().timeIntervalSinceDate(timeoflastopening) < 0.5,
+				let document = self.documents.last as? Document {
+
 				document.addFile(name: url.lastPathComponent ?? "", path: url)
 				completionHandler(document, true, nil)
 			} else {
 				super.openDocumentWithContentsOfURL(url, display: displayDocument, completionHandler: completionHandler)
 			}
-			timeoflastopening = NSDate()
+			timeoflastopening = url.lastPathComponent == " .html" ? NSDate.distantPast() : NSDate()
 	}
 }
