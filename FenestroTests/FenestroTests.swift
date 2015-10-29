@@ -51,12 +51,23 @@ class DocumentController_Tests: XCTestCase {
 	}
 
 	func testOpen2FilesInOneDocument () {
-		let expectation = expectationWithDescription("Document with 2 files created")
+		XCTAssertEqual(doccontroller.documents.count, 0)
 
-		doccontroller.openDocumentWithContentsOfURL(urlForTestResource("1", type: "html"), display: true) { _,_,_ in }
+		let expectation1 = expectationWithDescription("Document opened")
+		doccontroller.openDocumentWithContentsOfURL(urlForTestResource("1", type: "html"), display: true) { newdocument, _, error in
+			if let _ = newdocument as? Document {
+				expectation1.fulfill()
+			} else {
+				XCTFail(error?.localizedDescription ?? "Document created was not of type 'Document'")
+			}
+		}
+		waitForExpectationsWithTimeout(1.0, handler: nil)
+		XCTAssertEqual(doccontroller.documents.count, 1)
+
+		let expectation2 = expectationWithDescription("Document opened")
 		doccontroller.openDocumentWithContentsOfURL(urlForTestResource("2", type: "html"), display: true) { newdocument, _, error in
 			if let _ = newdocument as? Document {
-				expectation.fulfill()
+				expectation2.fulfill()
 			} else {
 				XCTFail(error?.localizedDescription ?? "Document created was not of type 'Document'")
 			}
