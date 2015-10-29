@@ -672,6 +672,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$(PROJECT_DIR)/Fenestro/Info.plist",
+				);
 				PRODUCT_NAME = fenestro;
 				SWIFT_OBJC_BRIDGING_HEADER = "fenestro-cli/fenestro-Bridging-Header.h";
 			};
@@ -681,6 +687,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$(PROJECT_DIR)/Fenestro/Info.plist",
+				);
 				PRODUCT_NAME = fenestro;
 				SWIFT_OBJC_BRIDGING_HEADER = "fenestro-cli/fenestro-Bridging-Header.h";
 			};

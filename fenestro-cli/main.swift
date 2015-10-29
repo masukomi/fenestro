@@ -12,7 +12,7 @@ struct MyError: ErrorType, CustomStringConvertible {
 	let description: String
 }
 
-func parseArguments (args: [String] = Process.arguments) throws -> (name: String, path: NSURL?) {
+func parseArguments (args: [String] = Process.arguments) throws -> (name: String?, path: NSURL?, showversion: Bool) {
 	let cli = CommandLine(arguments: args)
 
 	let filePathOption = StringOption(shortFlag: "p", longFlag: "file_path", required: false,
@@ -31,9 +31,10 @@ func parseArguments (args: [String] = Process.arguments) throws -> (name: String
 		throw MyError(description: errormessage)
 	}
 
+	guard !versionOption.value else { return (nil,nil,true) }
 	let path = filePathOption.value.map(NSURL.init)
 	let name = nameOption.value ?? path?.lastPathComponent ?? " .html"
-	return (name, path)
+	return (name, path, false)
 }
 
 func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStream) throws -> NSURL {
@@ -48,9 +49,21 @@ func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStr
 	}
 }
 
+func getVersionNumbers () -> (version: String, build: String) {
+	let info = NSBundle.mainBundle().infoDictionary!
+	return (info["CFBundleShortVersionString"] as! String, info["CFBundleVersion"] as! String)
+}
+
 do {
-	let (name, maybepath) = try parseArguments()
-	let path = try verifyOrCreateFile(name, maybepath, contents: main.stdin)
+	let (name, maybepath, showversion) = try parseArguments()
+
+	guard !showversion else {
+		let numbers = getVersionNumbers()
+		print(numbers.version, "(" + numbers.build + ")")
+		exit(0)
+	}
+
+	let path = try verifyOrCreateFile(name!, maybepath, contents: main.stdin)
 
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
 } catch {

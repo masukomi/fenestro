@@ -14,7 +14,7 @@ class ParseArguments_Tests: XCTestCase {
 		let arguments: [String] = ["fenestro"]
 
 		AssertNoThrow {
-			let (name, path) = try parseArguments(arguments)
+			let (name, path, _) = try parseArguments(arguments)
 
 			XCTAssertEqual(name, " .html")
 			XCTAssertNil(path)
@@ -25,7 +25,7 @@ class ParseArguments_Tests: XCTestCase {
 		let arguments: [String] = ["fenestro", "-p", "file.html"]
 
 		AssertNoThrow {
-			let (name, path) = try parseArguments(arguments)
+			let (name, path, _) = try parseArguments(arguments)
 
 			XCTAssertEqual(name, "file.html")
 			XCTAssertEqual(path, NSURL(fileURLWithPath: "file.html", isDirectory: false))
@@ -36,7 +36,7 @@ class ParseArguments_Tests: XCTestCase {
 		let arguments: [String] = ["fenestro", "-n", "name"]
 
 		AssertNoThrow {
-			let (name, path) = try parseArguments(arguments)
+			let (name, path, _) = try parseArguments(arguments)
 
 			XCTAssertEqual(name, "name")
 			XCTAssertNil(path)
@@ -47,7 +47,7 @@ class ParseArguments_Tests: XCTestCase {
 		let arguments: [String] = ["fenestro", "-n", "name", "-p", "file.html"]
 
 		AssertNoThrow {
-			let (name, path) = try parseArguments(arguments)
+			let (name, path, _) = try parseArguments(arguments)
 
 			XCTAssertEqual(name, "name")
 			XCTAssertEqual(path, NSURL(fileURLWithPath: "file.html", isDirectory: false))
