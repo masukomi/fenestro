@@ -54,12 +54,23 @@ func getVersionNumbers () -> (version: String, build: String) {
 	return (info["CFBundleShortVersionString"] as! String, info["CFBundleVersion"] as! String)
 }
 
+func printVersionsAndOpenPage () throws {
+	let numbers = getVersionNumbers()
+	let numbersstring = numbers.version + " (" + numbers.build + ")"
+	print(numbersstring)
+
+	let versionpath = main.tempdirectory + "fenestro-version.html"
+	let versionfile = try open(forWriting: versionpath)
+	versionfile.writeln("<html><body>Fenestro version " + numbersstring + "</body></html>")
+	versionfile.close()
+	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", versionpath)
+}
+
 do {
 	let (name, maybepath, showversion) = try parseArguments()
 
 	guard !showversion else {
-		let numbers = getVersionNumbers()
-		print(numbers.version, "(" + numbers.build + ")")
+		try printVersionsAndOpenPage()
 		exit(0)
 	}
 
