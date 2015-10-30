@@ -8,14 +8,10 @@
 
 import Foundation
 
-struct MyError: ErrorType, CustomStringConvertible {
-	let description: String
-}
 
-func parseArguments (args: [String] = Process.arguments) throws -> (name: String?, path: NSURL?, showversion: Bool) {
-	let cli = CommandLine(arguments: args)
+func parseArguments (cli: CommandLine) throws -> (name: String?, path: NSURL?, showversion: Bool) {
 
-	let filePathOption = StringOption(shortFlag: "p", longFlag: "file_path", required: false,
+	let filePathOption = StringOption(shortFlag: "p", longFlag: "path", required: false,
 		helpMessage: "Load HTML to be rendered from the specified file. Use stdin if this option is not used.")
 	let versionOption = BoolOption(shortFlag: "v", longFlag: "version",
 		helpMessage: "Print version and load an HTML page that displays the current version of the app.")
@@ -23,13 +19,7 @@ func parseArguments (args: [String] = Process.arguments) throws -> (name: String
 		helpMessage: "The name that should be displayed in the sidebar.")
 	cli.addOptions(filePathOption, versionOption, nameOption)
 
-	do {
-		try cli.parse(true)
-	} catch {
-		var errormessage = ""
-		cli.printUsage(error, to: &errormessage)
-		throw MyError(description: errormessage)
-	}
+	try cli.parse(true)
 
 	guard !versionOption.value else { return (nil,nil,true) }
 	let path = filePathOption.value.map(NSURL.init)
@@ -66,8 +56,10 @@ func printVersionsAndOpenPage () throws {
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", versionpath)
 }
 
+
+let cli = CommandLine()
 do {
-	let (name, maybepath, showversion) = try parseArguments()
+	let (name, maybepath, showversion) = try parseArguments(cli)
 
 	guard !showversion else {
 		try printVersionsAndOpenPage()
@@ -78,5 +70,6 @@ do {
 
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
 } catch {
-	exit(error)
+	cli.printUsage(error, to: &main.stderror)
+	exit(EX_USAGE)
 }

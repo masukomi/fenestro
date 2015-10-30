@@ -9,9 +9,9 @@
 import XCTest
 
 class ParseArguments_Tests: XCTestCase {
-    
+
 	func testNoArgs () {
-		let arguments: [String] = ["fenestro"]
+		let arguments = CommandLine(arguments: ["fenestro"])
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -22,7 +22,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testNoNameButPath () {
-		let arguments: [String] = ["fenestro", "-p", "file.html"]
+		let arguments = CommandLine(arguments: ["fenestro", "-p", "file.html"])
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -33,7 +33,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testNameButNoPath () {
-		let arguments: [String] = ["fenestro", "-n", "name"]
+		let arguments = CommandLine(arguments: ["fenestro", "-n", "name"])
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -44,7 +44,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testNameAndPath () {
-		let arguments: [String] = ["fenestro", "-n", "name", "-p", "file.html"]
+		let arguments = CommandLine(arguments: ["fenestro", "-n", "name", "-p", "file.html"])
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -55,11 +55,12 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testUnknownArgument () {
-		let arguments: [String] = ["fenestro", "-u", "gibberish"]
+		let arguments = CommandLine(arguments: ["fenestro", "-u", "gibberish"])
 
-		AssertThrows(MyError(description: "")) {
+		do {
 			try parseArguments(arguments)
-		}
+			XCTFail("parseArguments should have thrown an error")
+		} catch {}
 	}
 }
 
@@ -68,7 +69,7 @@ class GetVerifiedPath_Tests: XCTestCase {
 	func testNonExistingFileThrowsError () {
 		do {
 			try verifyOrCreateFile("", NSURL(fileURLWithPath: "idontexist.file"), contents: ReadableStream(NSFileHandle.fileHandleWithNullDevice()))
-			XCTFail("getVerifiedPath should have thrown an error")
+			XCTFail("verifyOrCreateFile should have thrown an error")
 		} catch {}
 	}
 
