@@ -9,7 +9,7 @@
 import Foundation
 
 
-func parseArguments (cli: CommandLine) throws -> (name: String?, path: NSURL?, showversion: Bool) {
+func parseArguments (cli: CommandLine) throws -> (name: String, path: NSURL?, showversion: Bool) {
 
 	let filePathOption = StringOption(shortFlag: "p", longFlag: "path", required: false,
 		helpMessage: "Load HTML to be rendered from the specified file. Use stdin if this option is not used.")
@@ -21,7 +21,7 @@ func parseArguments (cli: CommandLine) throws -> (name: String?, path: NSURL?, s
 
 	try cli.parse(true)
 
-	guard !versionOption.value else { return (nil,nil,true) }
+	guard !versionOption.value else { return ("",nil,true) }
 	let path = filePathOption.value.map(NSURL.init)
 	let name = nameOption.value ?? path?.lastPathComponent ?? " .html"
 	return (name, path, false)
@@ -30,6 +30,7 @@ func parseArguments (cli: CommandLine) throws -> (name: String?, path: NSURL?, s
 func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStream) throws -> NSURL {
 	if let path = maybepath {
 		try makeThrowable(path.checkResourceIsReachableAndReturnError)
+		
 		return path
 	} else {
 		let newpath = main.tempdirectory + name
@@ -66,7 +67,7 @@ do {
 		exit(0)
 	}
 
-	let path = try verifyOrCreateFile(name!, maybepath, contents: main.stdin)
+	let path = try verifyOrCreateFile(name, maybepath, contents: main.stdin)
 
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
 } catch {
