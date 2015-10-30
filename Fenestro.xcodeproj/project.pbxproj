@@ -12,6 +12,7 @@
 		BA6314EC1BDAE77600EAA17E /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314EA1BDAE77600EAA17E /* 2.html */; };
 		BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422C91BD97C6600EB67A0 /* ListController.swift */; };
 		BA7422CD1BD97DD200EB67A0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422CC1BD97DD200EB67A0 /* View.swift */; };
+		BAAB57F91BE3FD5900268675 /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314E91BDAE77600EAA17E /* 1.html */; };
 		BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFD1BD808930037A87F /* AppDelegate.swift */; };
 		BADD40001BD808930037A87F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD3FFF1BD808930037A87F /* Document.swift */; };
 		BADD40031BD808930037A87F /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD40011BD808930037A87F /* Document.xib */; };
@@ -432,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAB57F91BE3FD5900268675 /* 1.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

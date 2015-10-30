@@ -79,4 +79,28 @@ class GetVerifiedPath_Tests: XCTestCase {
 			try makeThrowable(path.checkResourceIsReachableAndReturnError)
 		}
 	}
+
+	func testPathAndNameCreatesLink () {
+		AssertNoThrow {
+			let oldpath = urlForTestResource( "1", type: "html")
+			let path = try verifyOrCreateFile("test2.file", oldpath, contents: ReadableStream(NSFileHandle.fileHandleWithNullDevice()))
+
+			XCTAssertEqual(path.lastPathComponent, "test2.file")
+			let contentsfromoldpath = try String(contentsOfURL: oldpath)
+			let contentsfromnewpath = try String(contentsOfURL: path)
+			XCTAssertEqual(contentsfromoldpath, contentsfromnewpath)
+		}
+	}
 }
+
+extension XCTestCase {
+
+	func urlForTestResource (filename: String, type: String) -> NSURL {
+		guard let path = NSBundle(forClass: self.dynamicType).pathForResource(filename, ofType: type) else {
+			preconditionFailure("resource \(filename).\(type) not found")
+		}
+
+		return NSURL(fileURLWithPath: path)
+	}
+}
+

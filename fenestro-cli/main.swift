@@ -19,6 +19,7 @@ func parseArguments (cli: CommandLine) throws -> (name: String, path: NSURL?, sh
 		helpMessage: "The name that should be displayed in the sidebar.")
 	cli.addOptions(filePathOption, versionOption, nameOption)
 
+
 	try cli.parse(true)
 
 	guard !versionOption.value else { return ("",nil,true) }
@@ -30,8 +31,13 @@ func parseArguments (cli: CommandLine) throws -> (name: String, path: NSURL?, sh
 func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStream) throws -> NSURL {
 	if let path = maybepath {
 		try makeThrowable(path.checkResourceIsReachableAndReturnError)
-		
-		return path
+		if path.lastPathComponent == name {
+			return path
+		} else {
+			let newpath = NSURL(fileURLWithPath: main.tempdirectory + name)
+			try Files.linkItemAtURL(path, toURL: newpath)
+			return newpath
+		}
 	} else {
 		let newpath = main.tempdirectory + name
 		var cache = try open(forWriting: newpath)
