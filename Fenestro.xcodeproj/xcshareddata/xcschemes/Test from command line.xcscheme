@@ -53,8 +53,8 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
       customWorkingDirectory = "$(PROJECT_DIR)/test"
@@ -77,7 +77,7 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "$(PROJECT_DIR)/test/openfiles.sh"
+            argument = "$(PROJECT_DIR)/test/test2.bash"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
