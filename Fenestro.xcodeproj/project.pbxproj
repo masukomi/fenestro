@@ -95,7 +95,6 @@
 		BADD40121BD808930037A87F /* FenestroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestroTests.swift; sourceTree = "<group>"; };
 		BADD40141BD808930037A87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADD401E1BD836D10037A87F /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
-		BADD40211BD855EF0037A87F /* openfiles.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = openfiles.sh; path = test/openfiles.sh; sourceTree = "<group>"; };
 		BAFC9C381BDDB32000EE4654 /* Bash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
 		BAFC9C391BDDB32000EE4654 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		BAFC9C3A1BDDB32000EE4654 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
@@ -173,7 +172,6 @@
 		BADD3FF11BD808930037A87F = {
 			isa = PBXGroup;
 			children = (
-				BADD40211BD855EF0037A87F /* openfiles.sh */,
 				BADD3FFC1BD808930037A87F /* Fenestro */,
 				BADD40111BD808930037A87F /* FenestroTests */,
 				BAFC9C541BDDB72C00EE4654 /* fenestro-cli */,
