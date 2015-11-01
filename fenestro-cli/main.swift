@@ -30,14 +30,9 @@ func parseArguments (cli: CommandLine) throws -> (name: String, path: NSURL?, sh
 
 func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStream) throws -> NSURL {
 	if let path = maybepath {
-		try makeThrowable(path.checkResourceIsReachableAndReturnError)
-		if path.lastPathComponent == name {
-			return path
-		} else {
-			let newpath = NSURL(fileURLWithPath: main.tempdirectory + name)
-			try Files.linkItemAtURL(path, toURL: newpath)
-			return newpath
-		}
+		let newpath = NSURL(fileURLWithPath: main.tempdirectory + name)
+		try Files.copyItemAtURL(path, toURL: newpath)
+		return newpath
 	} else {
 		let newpath = main.tempdirectory + name
 		var cache = try open(forWriting: newpath)

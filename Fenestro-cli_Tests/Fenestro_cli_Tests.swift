@@ -80,7 +80,7 @@ class GetVerifiedPath_Tests: XCTestCase {
 		}
 	}
 
-	func testPathAndNameCreatesLink () {
+	func testPathCopiesFile () {
 		AssertNoThrow {
 			let oldpath = urlForTestResource( "1", type: "html")
 			let path = try verifyOrCreateFile("test2.file", oldpath, contents: ReadableStream(NSFileHandle.fileHandleWithNullDevice()))
