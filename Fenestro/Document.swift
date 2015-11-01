@@ -39,7 +39,19 @@ class Document: NSDocument {
 	override func windowControllerDidLoadNib(aController: NSWindowController) {
 		super.windowControllerDidLoadNib(aController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
+
+		var windowframe = self.splitview.window!.frame
+		windowframe.size = NSSizeFromString(NSUserDefaults.standardUserDefaults().stringForKey("WindowSize") ?? "600,800")
+		self.splitview.window!.setFrame(windowframe, display: true)
+
 		self.showFile(path)
+	}
+
+	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
+		super.shouldCloseWindowController(windowController, delegate: delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
+
+		let sizestring = NSStringFromSize(self.splitview.window!.frame.size)
+		NSUserDefaults.standardUserDefaults().setObject(sizestring, forKey: "WindowSize")
 	}
 
 	override var windowNibName: String? {
