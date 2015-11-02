@@ -62,15 +62,19 @@ class DocumentController: NSDocumentController  {
 
 	var timeoflastopening = NSDate.distantPast()
 
-	override func openDocumentWithContentsOfURL (url: NSURL, display displayDocument: Bool,
+	override func openDocumentWithContentsOfURL (var url: NSURL, display displayDocument: Bool,
 		completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
+
+			if url.lastPathComponent == ".fenestroreadme" {
+				url = Document.defaultpath
+			}
 
 			if url.lastPathComponent != " .html" &&
 				NSDate().timeIntervalSinceDate(timeoflastopening) < 0.5,
 				let document = self.documents.last as? Document {
 
-				document.addFile(name: url.lastPathComponent ?? "", path: url)
-				completionHandler(document, true, nil)
+					document.addFile(name: url.lastPathComponent ?? "", path: url)
+					completionHandler(document, true, nil)
 			} else {
 				super.openDocumentWithContentsOfURL(url, display: displayDocument, completionHandler: completionHandler)
 			}

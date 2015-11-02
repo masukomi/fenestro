@@ -34,6 +34,11 @@ func verifyOrCreateFile(name: String, _ maybepath: NSURL?, contents: ReadableStr
 		try Files.copyItemAtURL(path, toURL: newpath)
 		return newpath
 	} else {
+		guard !contents.isTerminal() else {
+			let newpath = main.tempdirectory + ".fenestroreadme"
+			Files.createFileAtPath(newpath, contents: nil, attributes: nil)
+			return NSURL(fileURLWithPath: newpath)
+		}
 		let newpath = main.tempdirectory + name
 		var cache = try open(forWriting: newpath)
 		contents.writeTo(&cache)
@@ -56,6 +61,12 @@ func printVersionsAndOpenPage () throws {
 	versionfile.writeln("<html><body>Fenestro version " + numbersstring + "</body></html>")
 	versionfile.close()
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", versionpath)
+}
+
+extension ReadableStream {
+	func isTerminal () -> Bool {
+		return run(bash: "test -t \(filehandle.fileDescriptor) && echo true") == "true"
+	}
 }
 
 
