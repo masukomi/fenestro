@@ -73,7 +73,12 @@ class Document: NSDocument {
 			let newfilelist = ListController(name: self.name, path: self.path)
 			newfilelist.selectionHandler = showFile
 			splitview.addSubview(newfilelist.view, positioned: .Below, relativeTo: nil)
-			newfilelist.view.setFrameSize(NSSize(width: 200, height: Int.max))
+
+			// Make sure the file list is visible. But don't do this on El Capitan, it has the exact opposite effect there.
+			if Int32(rint(NSAppKitVersionNumber)) <= NSAppKitVersionNumber10_10_Max {
+    			newfilelist.view.setFrameSize(NSSize(width: 200, height: Int.max))
+			}
+
 			filelist = newfilelist
 		}
 		filelist?.addFile(name: name, path: path)

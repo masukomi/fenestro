@@ -27,6 +27,8 @@ class ListController: NSViewController {
 		tableview.addTableColumn(column)
 		tableview.setDataSource(self)
 		tableview.setDelegate(self)
+		tableview.setContentHuggingPriority(NSLayoutPriorityDefaultLow, forOrientation: .Vertical)
+		tableview.setContentHuggingPriority(NSLayoutPriorityDefaultLow, forOrientation: .Horizontal)
 
 		scroll.addSubViewToTheBrim(tableview)
 		self.view = scroll
