@@ -9,18 +9,20 @@
 import Foundation
 
 
-func parseArguments (cli: CommandLine) throws -> (name: String, path: NSURL?, showversion: Bool) {
+func parseArguments (arguments: [String]? = nil) throws -> (name: String, path: NSURL?, showversion: Bool) {
+	let parser = ArgumentParser()
+	let filePathOption = parser.add(StringArgument(short: "p", long: "path",
+		helptext: "Load HTML to be rendered from the specified file. Use stdin if this option is not used."))
+	let versionOption = parser.add(BoolArgument(short: "v", long: "version",
+		helptext: "Print version and load an HTML page that displays the current version of the app."))
+	let nameOption = parser.add(StringArgument(short: "n", long: "name",
+		helptext: "The name that should be displayed in the sidebar."))
 
-	let filePathOption = StringOption(shortFlag: "p", longFlag: "path", required: false,
-		helpMessage: "Load HTML to be rendered from the specified file. Use stdin if this option is not used.")
-	let versionOption = BoolOption(shortFlag: "v", longFlag: "version",
-		helpMessage: "Print version and load an HTML page that displays the current version of the app.")
-	let nameOption = StringOption(shortFlag: "n", longFlag: "name", required: false,
-		helpMessage: "The name that should be displayed in the sidebar.")
-	cli.addOptions(filePathOption, versionOption, nameOption)
-
-
-	try cli.parse(true)
+	if let arguments = arguments {
+		try parser.parse(arguments, strict: true)
+	} else {
+		try parser.parse(strict: true)
+	}
 
 	guard !versionOption.value else { return ("",nil,true) }
 	let path = filePathOption.value.map(NSURL.init)
@@ -70,9 +72,8 @@ extension ReadableStream {
 }
 
 
-let cli = CommandLine()
 do {
-	let (name, maybepath, showversion) = try parseArguments(cli)
+	let (name, maybepath, showversion) = try parseArguments()
 
 	guard !showversion else {
 		try printVersionsAndOpenPage()
@@ -83,6 +84,6 @@ do {
 
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
 } catch {
-	cli.printUsage(error, to: &main.stderror)
+	main.stderror.writeln(error)
 	exit(EX_USAGE)
 }
