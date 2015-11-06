@@ -80,7 +80,7 @@
 		BA6314EA1BDAE77600EAA17E /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = test/2.html; sourceTree = SOURCE_ROOT; };
 		BA7422C91BD97C6600EB67A0 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		BA7422CC1BD97DD200EB67A0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		BA822EF51BE9726500FD4C8B /* Moderator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Moderator.swift; path = ../../../../../../../Moderator/Moderator.swift/Moderator.swift/Moderator.swift; sourceTree = "<group>"; };
+		BA822EF51BE9726500FD4C8B /* Moderator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Moderator.swift; path = ../../Moderator.swift/Moderator.swift/Moderator.swift; sourceTree = "<group>"; };
 		BADD3FFA1BD808930037A87F /* Fenestro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADD3FFD1BD808930037A87F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADD3FFF1BD808930037A87F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
