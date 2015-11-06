@@ -11,7 +11,7 @@ import XCTest
 class ParseArguments_Tests: XCTestCase {
 
 	func testNoArgs () {
-		let arguments = CommandLine(arguments: ["fenestro"])
+		let arguments = [String]()
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -22,7 +22,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testNoNameButPath () {
-		let arguments = CommandLine(arguments: ["fenestro", "-p", "file.html"])
+		let arguments = ["-p", "file.html"]
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -33,7 +33,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testNameButNoPath () {
-		let arguments = CommandLine(arguments: ["fenestro", "-n", "name"])
+		let arguments = ["--name", "name"]
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -44,7 +44,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testNameAndPath () {
-		let arguments = CommandLine(arguments: ["fenestro", "-n", "name", "-p", "file.html"])
+		let arguments = ["-n", "name", "-p", "file.html"]
 
 		AssertNoThrow {
 			let (name, path, _) = try parseArguments(arguments)
@@ -55,7 +55,7 @@ class ParseArguments_Tests: XCTestCase {
 	}
 
 	func testUnknownArgument () {
-		let arguments = CommandLine(arguments: ["fenestro", "-u", "gibberish"])
+		let arguments = ["gibberish"]
 
 		do {
 			try parseArguments(arguments)

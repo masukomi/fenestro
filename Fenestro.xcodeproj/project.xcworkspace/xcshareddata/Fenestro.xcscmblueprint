@@ -5,14 +5,16 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "329E66929AB285BC7B7AB14742972A5565A733FC" : 0,
-    "CBF5F70D4EDC8047BC75C25236002B0EA7F6B15B" : 0,
-    "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F" : 0
+    "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F" : 0,
+    "F902FE9848B78AE6D05B4F4E71AB47614E345506" : 0,
+    "CBF5F70D4EDC8047BC75C25236002B0EA7F6B15B" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6A78CD8F-7F02-4983-B09C-54C245C06689",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "329E66929AB285BC7B7AB14742972A5565A733FC" : "Fenestro\/",
-    "CBF5F70D4EDC8047BC75C25236002B0EA7F6B15B" : "Fenestro\/Carthage\/Checkouts\/CommandLine\/",
-    "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F" : "Fenestro\/Carthage\/Checkouts\/SwiftShell\/"
+    "BF7C67668F4701C0AE5156F0E6F0CA70C1C6C61F" : "Fenestro\/Carthage\/Checkouts\/SwiftShell\/",
+    "F902FE9848B78AE6D05B4F4E71AB47614E345506" : "..\/..\/Moderator\/Moderator.swift",
+    "CBF5F70D4EDC8047BC75C25236002B0EA7F6B15B" : "Fenestro\/Carthage\/Checkouts\/CommandLine\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Fenestro",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -32,6 +34,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jatoben\/CommandLine.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CBF5F70D4EDC8047BC75C25236002B0EA7F6B15B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kareman\/Moderator.swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F902FE9848B78AE6D05B4F4E71AB47614E345506"
     }
   ]
 }
