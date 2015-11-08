@@ -40,21 +40,24 @@ class Document: NSDocument {
 		super.windowControllerDidLoadNib(aController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
 
-		var windowframe = self.splitview.window!.frame
-		windowframe.size = NSSizeFromString(NSUserDefaults.standardUserDefaults().stringForKey("WindowSize") ?? "600,800")
-		self.splitview.window!.setFrame(windowframe, display: true)
+		if let window = self.splitview.window {
+			var windowframe = window.frame
+			windowframe.size = NSSizeFromString(NSUserDefaults.standardUserDefaults().stringForKey("WindowSize") ?? "600,800")
+			window.setFrame(windowframe, display: true)
 
+			// Put the first window in the top left corner of the screen, and let the rest cascade from there.
+			window.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
+		}
 		self.showFile(path)
-
-		// Put the first window in the top left corner of the screen, and let the rest cascade from there.
-		self.splitview.window!.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
 	}
 
 	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
 		super.shouldCloseWindowController(windowController, delegate: delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
 
-		let sizestring = NSStringFromSize(self.splitview.window!.frame.size)
-		NSUserDefaults.standardUserDefaults().setObject(sizestring, forKey: "WindowSize")
+		if let window = self.splitview.window {
+			let sizestring = NSStringFromSize(window.frame.size)
+			NSUserDefaults.standardUserDefaults().setObject(sizestring, forKey: "WindowSize")
+		}
 	}
 
 	override var windowNibName: String? {
