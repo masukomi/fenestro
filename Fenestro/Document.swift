@@ -45,6 +45,9 @@ class Document: NSDocument {
 		self.splitview.window!.setFrame(windowframe, display: true)
 
 		self.showFile(path)
+
+		// Put the first window in the top left corner of the screen, and let the rest cascade from there.
+		self.splitview.window!.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
 	}
 
 	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
