@@ -21,7 +21,7 @@ class ListController: NSViewController {
 	}
 
 	private func setupView() {
-		let scroll = NSScrollView()
+		let scroll = NSScrollView(frame: NSRect(x: 0, y: 0, width: 200, height: 0))
 		scroll.focusRingType = .None
 
 		tableview.focusRingType = .None
