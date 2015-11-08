@@ -22,7 +22,9 @@ class ListController: NSViewController {
 
 	private func setupView() {
 		let scroll = NSScrollView()
+		scroll.focusRingType = .None
 
+		tableview.focusRingType = .None
 		let column = NSTableColumn(identifier: "Name")
 		tableview.addTableColumn(column)
 		tableview.setDataSource(self)
