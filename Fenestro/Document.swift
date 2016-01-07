@@ -70,8 +70,15 @@ class Document: NSDocument {
 		name = url.lastPathComponent ?? ""
 	}
 
+	/** Display text in file at `path` as html. */
 	func showFile (path: NSURL) {
-		webview.mainFrame.loadRequest(NSURLRequest(URL: path))
+		do {
+			guard let pathstr = path.path else { throw ErrorString("Could not open file at '\(path)'.") }
+			webview.mainFrame.loadHTMLString(try String(contentsOfFile: pathstr), baseURL: path)
+		} catch {
+			let errorstring = "<html><body>\(error)</body></html>"
+			webview.mainFrame.loadHTMLString(errorstring, baseURL: path)
+		}
 	}
 
 	func addFile(name name: String, path: NSURL) {
@@ -85,3 +92,7 @@ class Document: NSDocument {
 		filelist?.addFile(name: name, path: path)
 	}
 }
+
+typealias ErrorString = String
+
+extension ErrorString: ErrorType { }
