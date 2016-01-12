@@ -23,17 +23,18 @@ class ListController: NSViewController {
 	private func setupView() {
 		let scroll = NSScrollView(frame: NSRect(x: 0, y: 0, width: 200, height: 0))
 		scroll.focusRingType = .None
+		scroll.hasVerticalScroller = true
 
 		tableview.focusRingType = .None
 		let column = NSTableColumn(identifier: "Name")
 		tableview.addTableColumn(column)
+		tableview.headerView = nil
 		tableview.setDataSource(self)
 		tableview.setDelegate(self)
-		tableview.setContentHuggingPriority(NSLayoutPriorityDefaultLow, forOrientation: .Vertical)
-		tableview.setContentHuggingPriority(NSLayoutPriorityDefaultLow, forOrientation: .Horizontal)
 
-		scroll.addSubViewToTheBrim(tableview)
+		scroll.documentView = tableview
 		self.view = scroll
+		tableview.sizeLastColumnToFit()
 	}
 
 	required init?(coder: NSCoder) {
