@@ -80,4 +80,7 @@ class DocumentController: NSDocumentController  {
 			}
 			timeoflastopening = url.lastPathComponent == " .html" ? NSDate.distantPast() : NSDate()
 	}
+
+	/** Prevent recent documents from being displayed in the dock icon menu. */
+	override func noteNewRecentDocument(document: NSDocument) {	}
 }
