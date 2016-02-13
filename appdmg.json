@@ -1,0 +1,16 @@
+{
+
+  "title": "Fenestro",
+  "icon": "Fenestro/fenestro.icns",
+  "background": "media/dmg_background.png",
+  "icon-size": 80,
+
+  "contents": [
+
+    { "x": 200, "y": 60, "type": "file", "path": "media/README.md" },
+    { "x": 125, "y": 200, "type": "file", "path": "build/Release/Fenestro.app" },
+    { "x": 275, "y": 200, "type": "link", "path": "/Applications" }
+
+  ]
+
+}
