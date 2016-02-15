@@ -60,8 +60,10 @@ extension ListController: NSTableViewDataSource, NSTableViewDelegate {
 	}
 
 	func tableViewSelectionDidChange(notification: NSNotification) {
-		let path = list[tableview.selectedRow].path
-		selectionHandler?(path)
+		if tableview.selectedRow >= 0 {
+			let path = list[tableview.selectedRow].path
+			selectionHandler?(path)
+		}
 	}
 }
 
