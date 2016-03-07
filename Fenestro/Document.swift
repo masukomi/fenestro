@@ -72,7 +72,7 @@ class Document: NSDocument {
 
 	/** Display text in file at `path` as html. */
 	func showFile (path: NSURL) {
-        webview.preferences.setValue(true, forKey: "developerExtrasEnabled");
+		webview.preferences.setValue(true, forKey: "developerExtrasEnabled");
 		do {
 			guard let pathstr = path.path else { throw ErrorString("Could not open file at '\(path)'.") }
 			webview.mainFrame.loadHTMLString(try String(contentsOfFile: pathstr), baseURL: path)
