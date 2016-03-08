@@ -40,6 +40,7 @@ class Document: NSDocument {
 		super.windowControllerDidLoadNib(windowController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
 
+		//webview.UIDelegate = self
 		webview.preferences.setValue(true, forKey: "developerExtrasEnabled")
 
 		if let window = windowController.window {
@@ -49,8 +50,13 @@ class Document: NSDocument {
 
 			// Put the first window in the top left corner of the screen, and let the rest cascade from there.
 			window.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
+
+			let findcontroller = FindPanel()
+			window.contentView?.addSubview(findcontroller.view)
 		}
 		self.showFile(path)
+
+
 	}
 
 	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {

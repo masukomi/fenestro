@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B1D01FEA1C39E2040063CA79 /* fenestro.iconset in Resources */ = {isa = PBXBuildFile; fileRef = B1D01FE91C39E2040063CA79 /* fenestro.iconset */; };
+		BA32D1361C8F6D250031EC29 /* FindPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32D1341C8F6D250031EC29 /* FindPanel.swift */; };
+		BA32D1371C8F6D250031EC29 /* FindPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA32D1351C8F6D250031EC29 /* FindPanel.xib */; };
 		BA5B63F71BDF27EA00124B20 /* fenestro in Resources */ = {isa = PBXBuildFile; fileRef = BAFC9C531BDDB72C00EE4654 /* fenestro */; };
 		BA6314EB1BDAE77600EAA17E /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314E91BDAE77600EAA17E /* 1.html */; };
 		BA6314EC1BDAE77600EAA17E /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314EA1BDAE77600EAA17E /* 2.html */; };
@@ -78,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		B1D01FE91C39E2040063CA79 /* fenestro.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = fenestro.iconset; sourceTree = "<group>"; };
+		BA32D1341C8F6D250031EC29 /* FindPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPanel.swift; sourceTree = "<group>"; };
+		BA32D1351C8F6D250031EC29 /* FindPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPanel.xib; sourceTree = "<group>"; };
 		BA6314E91BDAE77600EAA17E /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 1.html; path = test/1.html; sourceTree = SOURCE_ROOT; };
 		BA6314EA1BDAE77600EAA17E /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = test/2.html; sourceTree = SOURCE_ROOT; };
 		BA7422C91BD97C6600EB67A0 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 		BADD3FFC1BD808930037A87F /* Fenestro */ = {
 			isa = PBXGroup;
 			children = (
+				BA32D1341C8F6D250031EC29 /* FindPanel.swift */,
+				BA32D1351C8F6D250031EC29 /* FindPanel.xib */,
 				B1D01FE91C39E2040063CA79 /* fenestro.iconset */,
 				BADD3FFD1BD808930037A87F /* AppDelegate.swift */,
 				BADD3FFF1BD808930037A87F /* Document.swift */,
@@ -408,6 +414,7 @@
 				B1D01FEA1C39E2040063CA79 /* fenestro.iconset in Resources */,
 				BADD401F1BD836D10037A87F /* README.html in Resources */,
 				BADD40051BD808930037A87F /* Assets.xcassets in Resources */,
+				BA32D1371C8F6D250031EC29 /* FindPanel.xib in Resources */,
 				BADD40031BD808930037A87F /* Document.xib in Resources */,
 				BADD40081BD808930037A87F /* MainMenu.xib in Resources */,
 			);
@@ -440,6 +447,7 @@
 				BA7422CD1BD97DD200EB67A0 /* View.swift in Sources */,
 				BADD40001BD808930037A87F /* Document.swift in Sources */,
 				BADD3FFE1BD808930037A87F /* AppDelegate.swift in Sources */,
+				BA32D1361C8F6D250031EC29 /* FindPanel.swift in Sources */,
 				BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
