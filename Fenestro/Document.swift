@@ -36,11 +36,13 @@ class Document: NSDocument {
 		self.path = Document.defaultpath
 	}
 
-	override func windowControllerDidLoadNib(aController: NSWindowController) {
-		super.windowControllerDidLoadNib(aController)
+	override func windowControllerDidLoadNib(windowController: NSWindowController) {
+		super.windowControllerDidLoadNib(windowController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
 
-		if let window = self.splitview.window {
+		webview.preferences.setValue(true, forKey: "developerExtrasEnabled")
+
+		if let window = windowController.window {
 			var windowframe = window.frame
 			windowframe.size = NSSizeFromString(NSUserDefaults.standardUserDefaults().stringForKey("WindowSize") ?? "600,800")
 			window.setFrame(windowframe, display: true)
@@ -54,7 +56,7 @@ class Document: NSDocument {
 	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
 		super.shouldCloseWindowController(windowController, delegate: delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
 
-		if let window = self.splitview.window {
+		if let window = windowController.window {
 			let sizestring = NSStringFromSize(window.frame.size)
 			NSUserDefaults.standardUserDefaults().setObject(sizestring, forKey: "WindowSize")
 		}
@@ -72,7 +74,6 @@ class Document: NSDocument {
 
 	/** Display text in file at `path` as html. */
 	func showFile (path: NSURL) {
-		webview.preferences.setValue(true, forKey: "developerExtrasEnabled");
 		do {
 			guard let pathstr = path.path else { throw ErrorString("Could not open file at '\(path)'.") }
 			webview.mainFrame.loadHTMLString(try String(contentsOfFile: pathstr), baseURL: path)
