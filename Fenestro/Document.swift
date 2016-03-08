@@ -52,7 +52,14 @@ class Document: NSDocument {
 			window.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
 
 			let findcontroller = FindPanel()
-			window.contentView?.addSubview(findcontroller.view)
+			let findview = findcontroller.view
+			window.contentView?.addSubview(findview)
+			var findframe = findview.frame
+			let x = window.frame.width - findframe.width
+			let y = window.frame.height - 2*findframe.height
+			findframe.origin = CGPoint(x: x, y: y)
+			findview.frame = findframe
+			findview.autoresizingMask = [.ViewMinXMargin, .ViewMinYMargin]
 		}
 		self.showFile(path)
 
