@@ -20,6 +20,7 @@ class Document: NSDocument {
 	@IBOutlet weak var webview: WebView!
 	@IBOutlet weak var splitview: NSSplitView!
 	var filelist: ListController?
+	let findcontroller = FindPanel()
 
 	var name: String!
 	var path: NSURL!
@@ -51,7 +52,7 @@ class Document: NSDocument {
 			// Put the first window in the top left corner of the screen, and let the rest cascade from there.
 			window.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
 
-			let findcontroller = FindPanel()
+			findcontroller.searchHandler = searchPage
 			let findview = findcontroller.view
 			window.contentView?.addSubview(findview)
 			var findframe = findview.frame
@@ -60,6 +61,7 @@ class Document: NSDocument {
 			findframe.origin = CGPoint(x: x, y: y)
 			findview.frame = findframe
 			findview.autoresizingMask = [.ViewMinXMargin, .ViewMinYMargin]
+
 		}
 		self.showFile(path)
 
@@ -105,6 +107,10 @@ class Document: NSDocument {
 			filelist = newfilelist
 		}
 		filelist?.addFile(name: name, path: path)
+	}
+
+	func searchPage(text: String) {
+		webview.searchFor(text, direction: true, caseSensitive: false, wrap: true)
 	}
 }
 

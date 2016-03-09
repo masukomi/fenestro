@@ -9,10 +9,24 @@
 import Cocoa
 
 class FindPanel: NSViewController {
+	@IBOutlet weak var searchField: NSTextField!
+
+	var searchHandler: ((String) -> Void)?
+
 /*
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
-*/    
+*/
+
+
+	override func controlTextDidChange(obj: NSNotification) {
+		searchHandler?(searchField.stringValue)
+		//view.window?.makeFirstResponder(searchField)
+	}
+
+	override func controlTextDidEndEditing(obj: NSNotification) {
+	}
+	
 }

@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FindPanel" customModule="Fenestro" customModuleProvider="target">
             <connections>
+                <outlet property="searchField" destination="EV4-md-rAe" id="hUu-zN-l2v"/>
                 <outlet property="view" destination="kMI-9f-2Hr" id="PwS-Gq-UCl"/>
             </connections>
         </customObject>
@@ -24,6 +25,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="nsg-ql-DAZ"/>
+                    </connections>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VZ6-Ge-4iG">
                     <rect key="frame" x="288" y="2" width="13" height="21"/>
