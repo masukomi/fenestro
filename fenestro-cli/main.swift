@@ -85,7 +85,10 @@ do {
 	let path = try verifyOrCreateFile(name, maybepath, contents: main.stdin)
 
 	try runAndPrint("open", "-b", "com.corporaterunaways.Fenestro", path.path!)
-} catch {
+} catch let error as ArgumentError {
 	main.stderror.writeln(error)
+	exit(EX_USAGE)
+} catch let error as NSError {
+	main.stderror.writeln(error.localizedDescription)
 	exit(EX_USAGE)
 }
