@@ -50,7 +50,7 @@ class Document: NSDocument {
 			// Put the first window in the top left corner of the screen, and let the rest cascade from there.
 			window.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
 		}
-		self.showFile(path)
+		self.showFile(name, path: path)
 	}
 
 	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
@@ -73,10 +73,12 @@ class Document: NSDocument {
 	}
 
 	/** Display text in file at `path` as html. */
-	func showFile (path: NSURL) {
+	func showFile (name: String, path: NSURL) {
 		do {
 			guard let pathstr = path.path else { throw ErrorString("Could not open file at '\(path)'.") }
 			webview.mainFrame.loadHTMLString(try String(contentsOfFile: pathstr), baseURL: path)
+			self.setDisplayName(name)
+			self.windowControllers.first?.window?.title = name
 		} catch {
 			let errorstring = "<html><body>\(error)</body></html>"
 			webview.mainFrame.loadHTMLString(errorstring, baseURL: path)

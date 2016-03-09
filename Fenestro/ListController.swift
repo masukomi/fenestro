@@ -12,7 +12,7 @@ class ListController: NSViewController {
 
 	private var list: [(name: String, path: NSURL)]
 	let tableview = NSTableView()
-	var selectionHandler: ((NSURL) -> Void)?
+	var selectionHandler: ((String, NSURL) -> Void)?
 
 	init (name: String, path: NSURL) {
 		list = [(name, path)]
@@ -61,8 +61,8 @@ extension ListController: NSTableViewDataSource, NSTableViewDelegate {
 
 	func tableViewSelectionDidChange(notification: NSNotification) {
 		if tableview.selectedRow >= 0 {
-			let path = list[tableview.selectedRow].path
-			selectionHandler?(path)
+			let item = list[tableview.selectedRow]
+			selectionHandler?(item.name, item.path)
 		}
 	}
 }
