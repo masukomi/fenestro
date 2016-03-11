@@ -61,6 +61,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 class DocumentController: NSDocumentController  {
 
 	var timeoflastopening = NSDate.distantPast()
+	var maxTimeWithoutNewWindow = 1.0;
+	/*
+	If they're just opening one file we don't need to be showing a sidebar.
+	If they're throwing lots of files at us quickly, then sidebar.
+	*/
 
 	override func openDocumentWithContentsOfURL (var url: NSURL, display displayDocument: Bool,
 		completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
@@ -69,8 +74,9 @@ class DocumentController: NSDocumentController  {
 				url = Document.defaultpath
 			}
 
+
 			if url.lastPathComponent != " .html" &&
-				NSDate().timeIntervalSinceDate(timeoflastopening) < 0.5,
+				NSDate().timeIntervalSinceDate(timeoflastopening) < maxTimeWithoutNewWindow,
 				let document = self.documents.last as? Document {
 
 					document.addFile(name: url.lastPathComponent ?? "", path: url)
