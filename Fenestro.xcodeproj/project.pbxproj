@@ -364,7 +364,6 @@
 				TargetAttributes = {
 					BADD3FF91BD808930037A87F = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = ZC8EJ526ND;
 					};
 					BADD400D1BD808930037A87F = {
 						CreatedOnToolsVersion = 7.0.1;
