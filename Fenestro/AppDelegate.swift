@@ -61,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 class DocumentController: NSDocumentController  {
 
 	var timeoflastopening = NSDate.distantPast()
-	var maxTimeWithoutNewWindow = 1.0;
+	var maxTimeWithoutNewWindow = 2.0;
 	/*
 	If they're just opening one file we don't need to be showing a sidebar.
 	If they're throwing lots of files at us quickly, then sidebar.
@@ -74,9 +74,10 @@ class DocumentController: NSDocumentController  {
 				url = Document.defaultpath
 			}
 
-
+            let lastOpenWasRecent = NSDate().timeIntervalSinceDate(timeoflastopening) < maxTimeWithoutNewWindow
+        
 			if url.lastPathComponent != " .html" &&
-				NSDate().timeIntervalSinceDate(timeoflastopening) < maxTimeWithoutNewWindow,
+				lastOpenWasRecent,
 				let document = self.documents.last as? Document {
 
 					document.addFile(name: url.lastPathComponent ?? "", path: url)
@@ -85,6 +86,7 @@ class DocumentController: NSDocumentController  {
 				super.openDocumentWithContentsOfURL(url, display: displayDocument, completionHandler: completionHandler)
 			}
 			timeoflastopening = url.lastPathComponent == " .html" ? NSDate.distantPast() : NSDate()
+
 	}
 
 	/** Prevent recent documents from being displayed in the dock icon menu. */
