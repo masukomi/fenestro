@@ -95,6 +95,10 @@ class Document: NSDocument {
 		}
 		filelist?.addFile(name: name, path: path)
 	}
+
+	override func printOperationWithSettings(printSettings: [String : AnyObject]) throws -> NSPrintOperation {
+		return webview.mainFrame.frameView.printOperationWithPrintInfo(NSPrintInfo(dictionary: printSettings))
+	}
 }
 
 typealias ErrorString = String
