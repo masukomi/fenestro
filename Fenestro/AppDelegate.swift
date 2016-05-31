@@ -67,15 +67,16 @@ class DocumentController: NSDocumentController  {
 	If they're throwing lots of files at us quickly, then sidebar.
 	*/
 
-	override func openDocumentWithContentsOfURL (var url: NSURL, display displayDocument: Bool,
+	override func openDocumentWithContentsOfURL (url: NSURL, display displayDocument: Bool,
 		completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
 
+			var url = url
 			if url.lastPathComponent == ".fenestroreadme" {
 				url = Document.defaultpath
 			}
 
-            let lastOpenWasRecent = NSDate().timeIntervalSinceDate(timeoflastopening) < maxTimeWithoutNewWindow
-        
+			let lastOpenWasRecent = NSDate().timeIntervalSinceDate(timeoflastopening) < maxTimeWithoutNewWindow
+
 			if url.lastPathComponent != " .html" &&
 				lastOpenWasRecent,
 				let document = self.documents.last as? Document {
