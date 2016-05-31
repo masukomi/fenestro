@@ -13,6 +13,8 @@
 		BA6314EC1BDAE77600EAA17E /* 2.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314EA1BDAE77600EAA17E /* 2.html */; };
 		BA7422CA1BD97C6600EB67A0 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422C91BD97C6600EB67A0 /* ListController.swift */; };
 		BA7422CD1BD97DD200EB67A0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7422CC1BD97DD200EB67A0 /* View.swift */; };
+		BA76111C1CFCF66B00D89B54 /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA76111B1CFCF66B00D89B54 /* Lazy-split.swift */; };
+		BA76111D1CFCFFAF00D89B54 /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA76111B1CFCF66B00D89B54 /* Lazy-split.swift */; };
 		BA822EF61BE9726500FD4C8B /* Moderator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA822EF51BE9726500FD4C8B /* Moderator.swift */; };
 		BA822EF71BE973C100FD4C8B /* Moderator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA822EF51BE9726500FD4C8B /* Moderator.swift */; };
 		BAAB57F91BE3FD5900268675 /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314E91BDAE77600EAA17E /* 1.html */; };
@@ -82,6 +84,7 @@
 		BA6314EA1BDAE77600EAA17E /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = test/2.html; sourceTree = SOURCE_ROOT; };
 		BA7422C91BD97C6600EB67A0 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		BA7422CC1BD97DD200EB67A0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		BA76111B1CFCF66B00D89B54 /* Lazy-split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lazy-split.swift"; sourceTree = "<group>"; };
 		BA822EF51BE9726500FD4C8B /* Moderator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Moderator.swift; path = ../../Moderator.swift/Moderator.swift/Moderator.swift; sourceTree = "<group>"; };
 		BADD3FFA1BD808930037A87F /* Fenestro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADD3FFD1BD808930037A87F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +115,7 @@
 		BAFC9C721BDEE54E00EE4654 /* Fenestro-cli_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fenestro-cli_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFC9C741BDEE54F00EE4654 /* Fenestro_cli_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fenestro_cli_Tests.swift; sourceTree = "<group>"; };
 		BAFC9C761BDEE54F00EE4654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAFC9C881BDEE7F800EE4654 /* CatchingFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatchingFire.swift; path = Carthage/Checkouts/SwiftShell/SwiftShellTests/CatchingFire.swift; sourceTree = SOURCE_ROOT; };
+		BAFC9C881BDEE7F800EE4654 /* CatchingFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatchingFire.swift; path = Carthage/Checkouts/SwiftShell/Tests/CatchingFire.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,12 +249,13 @@
 				BAFC9C441BDDB32000EE4654 /* SwiftShell-Bridging-Header.h */,
 			);
 			name = SwiftShell;
-			path = Carthage/Checkouts/SwiftShell/SwiftShell;
+			path = Carthage/Checkouts/SwiftShell/Sources/SwiftShell;
 			sourceTree = SOURCE_ROOT;
 		};
 		BAFC9C3D1BDDB32000EE4654 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				BA76111B1CFCF66B00D89B54 /* Lazy-split.swift */,
 				BAFC9C3E1BDDB32000EE4654 /* Array.swift */,
 				BAFC9C3F1BDDB32000EE4654 /* String.swift */,
 			);
@@ -455,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA76111C1CFCF66B00D89B54 /* Lazy-split.swift in Sources */,
 				BAFC9C5A1BDDB7AA00EE4654 /* Bash.swift in Sources */,
 				BAFC9C5B1BDDB7AA00EE4654 /* Command.swift in Sources */,
 				BAFC9C5C1BDDB7AA00EE4654 /* Context.swift in Sources */,
@@ -475,6 +480,7 @@
 			files = (
 				BAFC9C7E1BDEE61500EE4654 /* Bash.swift in Sources */,
 				BAFC9C7F1BDEE61500EE4654 /* Command.swift in Sources */,
+				BA76111D1CFCFFAF00D89B54 /* Lazy-split.swift in Sources */,
 				BAFC9C801BDEE61500EE4654 /* Context.swift in Sources */,
 				BAFC9C811BDEE61500EE4654 /* FileHandle.swift in Sources */,
 				BAFC9C891BDEE7F800EE4654 /* CatchingFire.swift in Sources */,

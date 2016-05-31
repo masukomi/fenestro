@@ -1,2 +1,2 @@
-github "kareman/SwiftShell" "SwiftShell2"
+github "kareman/SwiftShell" ~> 2.1
 github "kareman/Moderator.swift" ~> 0.1
