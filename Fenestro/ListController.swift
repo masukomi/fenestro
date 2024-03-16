@@ -10,28 +10,31 @@ import Cocoa
 
 class ListController: NSViewController {
 
-	private var list: [(name: String, path: NSURL)]
+	private var list: [(name: String, path: URL)]
 	let tableview = NSTableView()
-	var selectionHandler: ((String, NSURL) -> Void)?
+	var selectionHandler: ((String, URL) -> Void)?
 
-	init (name: String, path: NSURL) {
+	init (name: String, path: URL) {
 		list = [(name, path)]
-		super.init(nibName: nil, bundle: nil)!
+        super.init(nibName: nil, bundle: nil)
 		self.setupView()
 	}
 
 	private func setupView() {
 		let scroll = NSScrollView(frame: NSRect(x: 0, y: 0, width: 200, height: 0))
-		scroll.focusRingType = .None
+        scroll.focusRingType = .none
 		scroll.hasVerticalScroller = true
 
-		tableview.focusRingType = .None
-		let column = NSTableColumn(identifier: "Name")
+        tableview.focusRingType = .none
+		//let column = NSTableColumn(identifier: "Name")
+        let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "Name"))
 		tableview.addTableColumn(column)
 		tableview.headerView = nil
-		tableview.setDataSource(self)
-		tableview.setDelegate(self)
-
+		//tableview.setDataSource(self)
+        tableview.dataSource = self
+		//tableview.setDelegate(self)
+        tableview.delegate = self
+        
 		scroll.documentView = tableview
 		self.view = scroll
 		tableview.sizeLastColumnToFit()
@@ -41,11 +44,12 @@ class ListController: NSViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	func addFile(name name: String, path: NSURL) {
-		let index = list.insertionIndexOf((name, path)) { a, b in a.name < b.name }
+    func addFile(name: String, path: URL) {
+        let index = list.insertionIndexOf(elem: (name, path)) { a, b in a.name < b.name }
 		tableview.beginUpdates()
-		list.insert((name, path), atIndex: index)
-		tableview.insertRowsAtIndexes( NSIndexSet(index: index), withAnimation: .SlideLeft)
+        list.insert((name: name, path: path), at: index)
+		//tableview.insertRowsAtIndexes( NSIndexSet(index: index), withAnimation: .SlideLeft)
+        tableview.insertRows( at: NSIndexSet(index: index) as IndexSet, withAnimation: .slideLeft)
 		tableview.endUpdates()
 	}
 }
@@ -56,7 +60,7 @@ extension ListController: NSTableViewDataSource, NSTableViewDelegate {
 	}
 
 	func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
-		return list[row].name
+        return list[row].name as AnyObject
 	}
 
 	func tableViewSelectionDidChange(notification: NSNotification) {

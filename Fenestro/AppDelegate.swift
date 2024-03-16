@@ -7,27 +7,35 @@
 //
 
 import Cocoa
+import UniformTypeIdentifiers
+//import Foundation // maybe?
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	/** The current location of the command line application, or nil if it was not found. */
-	var cliAppDirectory: NSURL? {
-		let path = NSUserDefaults.standardUserDefaults().URLForKey("CliAppPath")
-		return path.flatMap {
-			$0.URLByAppendingPathComponent("fenestro").checkResourceIsReachableAndReturnError(nil) ? $0 : nil
-		}
+	var cliAppDirectory: URL? {
+        let path = UserDefaults.standard.url(forKey: "CliAppPath")
+		/*return path.flatMap {
+			//$0.URLByAppendingPathComponent("fenestro").checkResourceIsReachableAndReturnError(nil) ? $0 : nil
+            $0.appendPathComponent("fenestro")
+		}*/
+        
+        //TODO: check if resource is reachable
+        return path?.appendingPathComponent("fenestro", conformingTo: UTType.item)
 	}
 
 	/** Install the bundled command line application to this directory. */
-	func installCliApp (directory: NSURL) throws {
-		let frompath = NSBundle.mainBundle().URLForResource("fenestro", withExtension: "")!
-		let topath = directory.URLByAppendingPathComponent("fenestro")
-		try NSFileManager.defaultManager().copyItemAtURL(frompath, toURL: topath)
-		NSUserDefaults.standardUserDefaults().setURL(directory, forKey: "CliAppPath")
+	func installCliApp (directory: URL) throws {
+        let frompath = Bundle.main.url(forResource: "fenestro", withExtension: "")!
+		//let topath = directory.URLByAppendingPathComponent("fenestro")
+        let topath = directory.appendingPathComponent("fenestro")
+        try FileManager.default.copyItem(at: frompath, to: topath)
+        UserDefaults.standard.set(directory, forKey: "CliAppPath")
 	}
 
-	func showError (error: ErrorType) {
+    
+	func showError (error: Error) {
 		NSAlert(error: error as NSError).runModal()
 	}
 
@@ -46,12 +54,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			panel.showsHiddenFiles = true
 			panel.title = "Install commandline application"
 			panel.message = "Select the location for the commandline application. It should be a directory listed in the PATH environment variable for easy access."
-			panel.directoryURL = NSURL(fileURLWithPath: "/usr/local/bin")
-			if panel.runModal() == NSFileHandlingPanelOKButton {
+			panel.directoryURL = URL(fileURLWithPath: "/usr/local/bin")
+            if panel.runModal().rawValue == NSApplication.ModalResponse.OK.rawValue {
 				do {
-					try installCliApp(panel.URLs.first!)
+                    try installCliApp(directory: panel.urls.first!)
 				} catch {
-					showError(error)
+                    showError(error: error)
 				}
 			}
 		}
@@ -60,36 +68,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 class DocumentController: NSDocumentController  {
 
-	var timeoflastopening = NSDate.distantPast()
+    var timeoflastopening = Date.distantPast
 	var maxTimeWithoutNewWindow = 2.0;
 	/*
 	If they're just opening one file we don't need to be showing a sidebar.
 	If they're throwing lots of files at us quickly, then sidebar.
 	*/
 
-	override func openDocumentWithContentsOfURL (url: NSURL, display displayDocument: Bool,
-		completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
+    override func openDocument(withContentsOf url: URL,
+                               display displayDocument: Bool,
+                               completionHandler: @escaping (NSDocument?, Bool, (any Error)?) 
+                               -> Void ){
+        
+    // OLD
+	//override func openDocumentWithContentsOfURL (url: NSURL,
+        // display displayDocument: Bool,
+	    // completionHandler: (NSDocument?, Bool, NSError?) -> Void) {
 
-			var url = url
-			if url.lastPathComponent == ".fenestroreadme" {
-				url = Document.defaultpath
-			}
+        var url = url
+        if url.lastPathComponent == ".fenestroreadme" {
+            url = Document.defaultpath
+        }
 
-			let lastOpenWasRecent = NSDate().timeIntervalSinceDate(timeoflastopening) < maxTimeWithoutNewWindow
+        let lastOpenWasRecent = Date().timeIntervalSince(timeoflastopening) < maxTimeWithoutNewWindow
 
-			if url.lastPathComponent != " .html" &&
-				lastOpenWasRecent,
-				let document = self.documents.last as? Document {
+        if url.lastPathComponent != " .html" &&
+            lastOpenWasRecent,
+            let document = self.documents.last as? Document {
 
-					document.addFile(name: url.lastPathComponent ?? "", path: url)
-					completionHandler(document, true, nil)
-			} else {
-				super.openDocumentWithContentsOfURL(url, display: displayDocument, completionHandler: completionHandler)
-			}
-			timeoflastopening = url.lastPathComponent == " .html" ? NSDate.distantPast() : NSDate()
+            document.addFile(name: url.lastPathComponent, path: url)
+            completionHandler(document, true, nil)
+        } else {
+            super.openDocument(withContentsOf: url, display: displayDocument, completionHandler: completionHandler)
+        }
+        timeoflastopening = url.lastPathComponent == " .html" ? Date.distantPast : Date()
 
 	}
 
 	/** Prevent recent documents from being displayed in the dock icon menu. */
-	override func noteNewRecentDocument(document: NSDocument) {	}
+    override func noteNewRecentDocument(_ document: NSDocument) {	}
 }

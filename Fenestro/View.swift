@@ -14,13 +14,16 @@ extension NSView {
 	func addSubViewToTheBrim (subview: NSView) {
 		subview.translatesAutoresizingMaskIntoConstraints = false
 		addSubview(subview)
-		self.addConstraints("V:|-0-[subview]-0-|", views: ["subview": subview])
-		self.addConstraints("H:|-0-[subview]-0-|", views: ["subview": subview])
+        self.addConstraints(visualformat: "V:|-0-[subview]-0-|", views: ["subview": subview])
+        self.addConstraints(visualformat: "H:|-0-[subview]-0-|", views: ["subview": subview])
 	}
 
 	/** Add constraints in visual format language with no options and no metrics */
 	func addConstraints (visualformat: String, views: [String:AnyObject]) -> [NSLayoutConstraint] {
-		let constraints = NSLayoutConstraint.constraintsWithVisualFormat(visualformat, options: .DirectionLeadingToTrailing, metrics: nil, views: views)
+        let constraints = NSLayoutConstraint.constraints(withVisualFormat: visualformat,
+                                                         options: [],
+                                                         metrics: nil,
+                                                         views: views)
 		self.addConstraints(constraints)
 		return constraints
 	}

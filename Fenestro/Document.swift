@@ -11,18 +11,18 @@ import WebKit
 
 class Document: NSDocument {
 
-	override class func canConcurrentlyReadDocumentsOfType(typeName: String) -> Bool {
+    override class func canConcurrentlyReadDocuments(ofType typeName: String) -> Bool {
 		return false
 	}
 
-	static let defaultpath = NSBundle.mainBundle().URLForResource("README", withExtension: "html")!
+    static let defaultpath = Bundle.main.url(forResource: "README", withExtension: "html")!
 
 	@IBOutlet weak var webview: WebView!
 	@IBOutlet weak var splitview: NSSplitView!
 	var filelist: ListController?
 
 	var name: String!
-	var path: NSURL!
+	var path: URL!
 
 	override init() {
 		super.init()
@@ -36,7 +36,7 @@ class Document: NSDocument {
 		self.path = Document.defaultpath
 	}
 
-	override func windowControllerDidLoadNib(windowController: NSWindowController) {
+    override func windowControllerDidLoadNib(_ windowController: NSWindowController) {
 		super.windowControllerDidLoadNib(windowController)
 		// Add any code here that needs to be executed once the windowController has loaded the document's window.
 
@@ -44,21 +44,31 @@ class Document: NSDocument {
 
 		if let window = windowController.window {
 			var windowframe = window.frame
-			windowframe.size = NSSizeFromString(NSUserDefaults.standardUserDefaults().stringForKey("WindowSize") ?? "600,800")
+            windowframe.size = NSSizeFromString(UserDefaults.standard.string(forKey: "WindowSize") ?? "600,800")
 			window.setFrame(windowframe, display: true)
 
 			// Put the first window in the top left corner of the screen, and let the rest cascade from there.
-			window.cascadeTopLeftFromPoint(NSPoint(x: 20, y: 20))
+            window.cascadeTopLeft(from: NSPoint(x: 20, y: 20))
 		}
-		self.showFile(name, path: path)
+        self.showFile(name: name, path: path)
 	}
 
-	override func shouldCloseWindowController(windowController: NSWindowController, delegate: AnyObject?, shouldCloseSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
-		super.shouldCloseWindowController(windowController, delegate: delegate, shouldCloseSelector: shouldCloseSelector, contextInfo: contextInfo)
+    override func shouldCloseWindowController(_ windowController: NSWindowController, 
+                                              delegate: Any?,
+                                              shouldClose shouldCloseSelector: Selector?,
+                                              contextInfo: UnsafeMutableRawPointer?) {
+
+	/* OLD
+     override func shouldCloseWindowController(windowController: NSWindowController,
+                                              delegate: AnyObject?,
+                                              shouldCloseSelector: Selector,
+                                              contextInfo: UnsafeMutablePointer<Void>
+    ) {*/
+        super.shouldCloseWindowController(windowController, delegate: delegate, shouldClose: shouldCloseSelector, contextInfo: contextInfo)
 
 		if let window = windowController.window {
 			let sizestring = NSStringFromSize(window.frame.size)
-			NSUserDefaults.standardUserDefaults().setObject(sizestring, forKey: "WindowSize")
+            UserDefaults.standard.set(sizestring, forKey: "WindowSize")
 		}
 	}
 
@@ -67,17 +77,18 @@ class Document: NSDocument {
 		return "Document"
 	}
 
-	override func readFromURL(url: NSURL, ofType typeName: String) throws {
+    override func read(from url: URL, ofType typeName: String) throws {
 		path = url
-		name = url.lastPathComponent ?? ""
+        name = url.lastPathComponent
 	}
 
 	/** Display text in file at `path` as html. */
-	func showFile (name: String, path: NSURL) {
+	func showFile (name: String, path: URL) {
 		do {
-			guard let pathstr = path.path else { throw ErrorString("Could not open file at '\(path)'.") }
+			//guard let pathstr = path.path else { throw ErrorString("Could not open file at '\(path)'.") }
+            let pathstr = path.path
 			webview.mainFrame.loadHTMLString(try String(contentsOfFile: pathstr), baseURL: path)
-			self.setDisplayName(name)
+            self.displayName = name
 			self.windowControllers.first?.window?.title = name
 		} catch {
 			let errorstring = "<html><body>\(error)</body></html>"
@@ -85,22 +96,22 @@ class Document: NSDocument {
 		}
 	}
 
-	func addFile(name name: String, path: NSURL) {
+    func addFile(name: String, path: URL) {
 		if filelist == nil {
 			let newfilelist = ListController(name: self.name, path: self.path)
 			newfilelist.selectionHandler = showFile
-			splitview.addSubview(newfilelist.view, positioned: .Below, relativeTo: nil)
+            splitview.addSubview(newfilelist.view, positioned: NSWindow.OrderingMode.below, relativeTo: nil)
 
 			filelist = newfilelist
 		}
 		filelist?.addFile(name: name, path: path)
 	}
 
-	override func printOperationWithSettings(printSettings: [String : AnyObject]) throws -> NSPrintOperation {
-		return webview.mainFrame.frameView.printOperationWithPrintInfo(NSPrintInfo(dictionary: printSettings))
+    override func printOperation(withSettings printSettings: [NSPrintInfo.AttributeKey : Any]) throws -> NSPrintOperation {
+        return webview.mainFrame.frameView.printOperation(with: NSPrintInfo(dictionary: printSettings))
 	}
 }
 
 typealias ErrorString = String
 
-extension ErrorString: ErrorType { }
+extension ErrorString: Error { }
