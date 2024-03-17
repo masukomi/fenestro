@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12E63692BA7576D002E29EE /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = B12E63682BA7576D002E29EE /* ArgumentParser */; };
 		B1D01FEA1C39E2040063CA79 /* fenestro.iconset in Resources */ = {isa = PBXBuildFile; fileRef = B1D01FE91C39E2040063CA79 /* fenestro.iconset */; };
 		BA5B63F71BDF27EA00124B20 /* fenestro in Resources */ = {isa = PBXBuildFile; fileRef = BAFC9C531BDDB72C00EE4654 /* fenestro */; };
 		BA6314EB1BDAE77600EAA17E /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = BA6314E91BDAE77600EAA17E /* 1.html */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B12E63662BA755E9002E29EE /* Accessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accessibility.framework; path = System/Library/Frameworks/Accessibility.framework; sourceTree = SDKROOT; };
 		B1D01FE91C39E2040063CA79 /* fenestro.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = fenestro.iconset; sourceTree = "<group>"; };
 		BA6314E91BDAE77600EAA17E /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 1.html; path = test/1.html; sourceTree = SOURCE_ROOT; };
 		BA6314EA1BDAE77600EAA17E /* 2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = 2.html; path = test/2.html; sourceTree = SOURCE_ROOT; };
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B12E63692BA7576D002E29EE /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B12E63652BA755E9002E29EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B12E63662BA755E9002E29EE /* Accessibility.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA6314E81BDAE75B00EAA17E /* Testfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +150,7 @@
 				BAFC9C541BDDB72C00EE4654 /* fenestro-cli */,
 				BAFC9C731BDEE54F00EE4654 /* Fenestro-cli_Tests */,
 				BADD3FFB1BD808930037A87F /* Products */,
+				B12E63652BA755E9002E29EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +271,9 @@
 			dependencies = (
 			);
 			name = "fenestro-cli";
+			packageProductDependencies = (
+				B12E63682BA7576D002E29EE /* ArgumentParser */,
+			);
 			productName = "fenestro-cli";
 			productReference = BAFC9C531BDDB72C00EE4654 /* fenestro */;
 			productType = "com.apple.product-type.tool";
@@ -316,6 +331,7 @@
 			);
 			mainGroup = BADD3FF11BD808930037A87F;
 			packageReferences = (
+				B1F3ACA62BA6122E0083EC55 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = BADD3FFB1BD808930037A87F /* Products */;
 			projectDirPath = "";
@@ -527,7 +543,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Fenestro/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.Fenestro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,7 +563,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Fenestro/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.Fenestro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,7 +581,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FenestroTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.FenestroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -573,7 +599,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FenestroTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.corporaterunaways.FenestroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -618,7 +648,11 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Fenestro-cli_Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.corporaterunaways.Fenestro-cli-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,7 +666,11 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Fenestro-cli_Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.corporaterunaways.Fenestro-cli-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -690,6 +728,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1F3ACA62BA6122E0083EC55 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B12E63682BA7576D002E29EE /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1F3ACA62BA6122E0083EC55 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BADD3FF21BD808930037A87F /* Project object */;
 }
