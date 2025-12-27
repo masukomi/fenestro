@@ -1,3 +1,7 @@
+# ARCHIVED CODE
+Fenestro has been rewritten as a cross-platform app in Go. 
+The latest version can be found at <https://github.com/dacharyc/fenestro>
+
 # Overview
 
 ![fenestro icon](https://raw.githubusercontent.com/masukomi/fenestro/master/Fenestro/fenestro.iconset/icon_256x256.png)
